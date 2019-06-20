@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel='stylesheet' href='design.css'>
+  <link rel="stylesheet" href="chartist.css">
+  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="chart.js"></script>
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class="rightdiv">
+    <div id="BTNONE">
+              <button ID="Button1" value="Button">General Product Report</button>
+    </div>
+  </div>
+
+
+  <div id="Prod">
+      <button id="donutchart Button2" type="button" onclick="loadChart(document.getElementById('ct-chart'))" value="New Tab" style="display: none;">Pie Chart</button>
+      <button id="Button2" type="button" onclick="loadBar(document.getElementById('myChart').getContext('2d'))" value="New Tab" style="display: none;">Bar Chart</button>
+  </div>
+  <button id="destory" type="button" onclick="document.getElementById('ct-chart').destroy()">Destroy</button>
+
+  
+  <div id="ct-chart">
+    <div class="ct-chart ct-perfect-fourth container"></div>
+  </div>
+
+  <div class="container">
+    <canvas id="myChart" width="400" height="400"></canvas>
+  </div>
+  <script>
+    $("#BTNONE button:eq(0)").on('click', function () {
+      $("#Prod button:eq(0)").show();
+      $("#Prod button:eq(1)").show();
+    });
+  </script>
+
+</body>
+
+</html>
