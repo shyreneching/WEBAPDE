@@ -20,18 +20,18 @@
 
 
   <div id="Prod">
-      <button id="donutchart Button2" type="button" onclick="loadChart(document.getElementById('ct-chart'))" value="New Tab" style="display: none;">Pie Chart</button>
-      <button id="Button2" type="button" onclick="loadBar(document.getElementById('myChart').getContext('2d'))" value="New Tab" style="display: none;">Bar Chart</button>
+      <button id="donutchart Button2" type="button" onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab" style="display: none;">Pie Chart</button>
+      <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart').getContext('2d'));" value="New Tab" style="display: none;">Bar Chart</button>
   </div>
-  <button id="destory" type="button" onclick="document.getElementById('ct-chart').destroy()">Destroy</button>
-
-  
-  <div id="ct-chart">
-    <div class="ct-chart ct-perfect-fourth container"></div>
-  </div>
+  <button id="destory" type="button" onclick="chartDest()">Destroy</button>
 
   <div class="container">
-    <canvas id="myChart" width="400" height="400"></canvas>
+      <canvas id="doughnutChart" width="400" height="400"></canvas>
+    </div>
+
+
+  <div class="container">
+    <canvas id="barChart" width="400" height="400"></canvas>
   </div>
   <script>
     $("#BTNONE button:eq(0)").on('click', function () {
