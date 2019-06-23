@@ -14,29 +14,40 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <div class="rightdiv">
     <div id="BTNONE">
-              <button ID="Button1" value="Button">General Product Report</button>
+        <button ID="Button1" value="Button" >General Product Report</button>
+        <button ID="Button1" value="Button">Time Series Product Report</button>
     </div>
   </div>
 
 
   <div id="Prod">
       <button id="donutchart Button2" type="button" onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab" style="display: none;">Pie Chart</button>
-      <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart').getContext('2d'));" value="New Tab" style="display: none;">Bar Chart</button>
+      <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart'));" value="New Tab" style="display: none;">Bar Chart</button>
   </div>
   <button id="destory" type="button" onclick="chartDest()">Destroy</button>
 
   <div class="container">
       <canvas id="doughnutChart" width="400" height="400"></canvas>
     </div>
-
-
   <div class="container">
     <canvas id="barChart" width="400" height="400"></canvas>
   </div>
+  <div class="container">
+    <canvas id="lineChart" width="400" height="400"></canvas>
+  </div>
+
   <script>
     $("#BTNONE button:eq(0)").on('click', function () {
       $("#Prod button:eq(0)").show();
       $("#Prod button:eq(1)").show();
+      chartDest();
+    });
+
+    $("#BTNONE button:eq(1)").on('click', function () {
+      $("#Prod button:eq(0)").hide();
+      $("#Prod button:eq(1)").hide();
+      chartDest();
+      loadline('lineChart');
     });
   </script>
 
