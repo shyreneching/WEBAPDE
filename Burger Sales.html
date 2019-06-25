@@ -23,32 +23,65 @@
   <div id="Prod">
       <button id="donutchart Button2" type="button" onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab" style="display: none;">Pie Chart</button>
       <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart'));" value="New Tab" style="display: none;">Bar Chart</button>
+      <button id="Button2" type="button" value="New Tab" style="display: none;">Monthly</button>
+      <button id="Button2" type="button" value="New Tab" style="display: none;">Weekly</button>
+      <button id="Button2" type="button" onclick="chartDest();" value="New Tab" style="display: none;">Specific Date</button>
   </div>
+  <div id="date" ><input type="date" name="date" id="dateseries" value="New Tab" style="display: none;">
+  </div>
+
   <button id="destory" type="button" onclick="chartDest()">Destroy</button>
 
-  <div class="container">
-      <canvas id="doughnutChart" width="400" height="400"></canvas>
+  <div class="burgcontainer">
+      <canvas id="doughnutChart" width="500" height="500"></canvas>
     </div>
-  <div class="container">
-    <canvas id="barChart" width="400" height="400"></canvas>
+  <div class="burgcontainer">
+    <canvas id="barChart" width="500" height="500"></canvas>
   </div>
-  <div class="container">
-    <canvas id="lineChart" width="400" height="400"></canvas>
+  <div class="burgcontainer">
+    <canvas id="lineMonth" width="700" height="600"></canvas>
+  </div>
+  <div class="burgcontainer">
+    <canvas id="lineWeek" width="600" height="500"></canvas>
   </div>
 
   <script>
     $("#BTNONE button:eq(0)").on('click', function () {
       $("#Prod button:eq(0)").show();
       $("#Prod button:eq(1)").show();
+      $("#Prod button:eq(2)").hide();
+      $("#Prod button:eq(3)").hide();
+      $("#Prod button:eq(4)").hide();
+      $("#date input:eq(0)").hide();
       chartDest();
     });
 
     $("#BTNONE button:eq(1)").on('click', function () {
       $("#Prod button:eq(0)").hide();
       $("#Prod button:eq(1)").hide();
+      $("#Prod button:eq(2)").show();
+      $("#Prod button:eq(3)").show();
+      $("#Prod button:eq(4)").show();
       chartDest();
-      loadline('lineChart');
     });
+    // load date specified
+    $("#Prod button:eq(4)").on('click', function () {
+      $("#date input:eq(0)").show();
+      chartDest();
+    });
+    //Load week
+    $("#Prod button:eq(3)").on('click', function () {
+      $("#date input:eq(0)").hide();
+      chartDest();
+      loadweek(document.getElementById('lineWeek'));
+    });
+    // Load month
+    $("#Prod button:eq(2)").on('click', function () {
+      $("#date input:eq(0)").hide();
+      chartDest();
+      loadline('lineMonth');
+    });
+
   </script>
 
 </body>

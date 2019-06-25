@@ -16,6 +16,8 @@
 	<!-- Title font -->
 	<link rel='stylesheet' id='elementor-post-1939-css'  href='https://izsubs.com/wp-content/uploads/elementor/css/post-1939.css?ver=1554804959' type='text/css' media='all' />
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+	<script src="chart.js"></script>
 	<!-- data -->
 	<script type='text/javascript' src='grabber.js'></script>
 	<link rel='stylesheet' href='design.css'>
@@ -37,9 +39,11 @@
 				<h1 class="entry-title">Product Report</h1>	</header><!-- .entry-header -->
 				<div class="scroller">
 				<nav>
-						<a href="#1"><img src="Assets/Section 1.jpg" alt="Krusty Combo" class="product"></a>
-						<a href="#2"><img src="Assets/Section 2.jpg" alt="Krusty Pattie" class="product"></a>
-						<a href="#3"><img src="Assets/Section 3.jpg" alt="Krusty Deluxue" class="product"></a>
+						<a href="#1"><img src="Assets/General.jpg" alt="General Sales" class="product"></a>
+						<a href="#2"><img src="Assets/Section 1.jpg" alt="Krusty Combo" class="product"></a>
+						<a href="#3"><img src="Assets/Section 2.jpg" alt="Krusty Pattie" class="product"></a>
+						<a href="#4"><img src="Assets/Section 3.jpg" alt="Krusty Deluxue" class="product"></a>
+						<a href="#5"><img src="Assets/Summary.jpg" alt="Summary Report" class="product" onclick="loadSummary(document.getElementById('barChart'));"></a>
 				</nav>
 			</div>
 	<div >
@@ -225,10 +229,438 @@
 
 
 
+		<!-- Header -->
+				<section id = "1" class="elementor-element elementor-element-f0df4eb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f0df4eb" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-9e3c934 elementor-column elementor-col-100 elementor-top-column" data-id="9e3c934" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-3d20e8a elementor-invisible elementor-widget elementor-widget-heading" data-id="3d20e8a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+			<div class="elementor-widget-container">
+		<h2 class="elementor-heading-title elementor-size-default">General Customer Sales</h2>		</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+			<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+			<div class="elementor-widget-container">
+					<span class="elementor-title">Leatherblack Turtle</span>
+
+	<div class="elementor-progress-wrapper progress-leatherblack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Current State">
+		<div class="elementor-progress-bar" data-max="50">
+			<span class="elementor-progress-text">Current State</span>
+								<span class="elementor-progress-percentage">50%</span>
+						</div>
+	</div>
+			</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+			<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+			<div class="elementor-widget-container">
+					<span class="elementor-title">Salmon</span>
+
+	<div class="elementor-progress-wrapper progress-salmon" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" aria-valuetext="Current State">
+		<div class="elementor-progress-bar" data-max="30">
+			<span class="elementor-progress-text">Current State</span>
+								<span class="elementor-progress-percentage">30%</span>
+						</div>
+	</div>
+			</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+	<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+			<div class="elementor-widget-container">
+					<span class="elementor-title">Seahorse</span>
+
+	<div class="elementor-progress-wrapper progress-seahorse" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" aria-valuetext="Current State">
+		<div class="elementor-progress-bar" data-max="20">
+			<span class="elementor-progress-text">Current State</span>
+								<span class="elementor-progress-percentage">20%</span>
+						</div>
+	</div>
+			</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+			<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+			<div class="elementor-widget-container">
+					<span class="elementor-title">Coral</span>
+
+	<div class="elementor-progress-wrapper progress-coral" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Current State">
+		<div class="elementor-progress-bar" data-max="50">
+			<span class="elementor-progress-text">Current State</span>
+								<span class="elementor-progress-percentage">50%</span>
+						</div>
+	</div>
+			</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+			<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+			<div class="elementor-widget-container">
+					<span class="elementor-title">Giant Clam</span>
+
+	<div class="elementor-progress-wrapper progress-clam" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5" aria-valuetext="Current State">
+		<div class="elementor-progress-bar" data-max="5">
+			<span class="elementor-progress-text">Current State</span>
+								<span class="elementor-progress-percentage">5%</span>
+						</div>
+	</div>
+			</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+			<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+			<div class="elementor-widget-container">
+					<span class="elementor-title">Gray Whale</span>
+
+	<div class="elementor-progress-wrapper progress-whale" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="13" aria-valuetext="Current State">
+		<div class="elementor-progress-bar" data-max="13">
+			<span class="elementor-progress-text">Current State</span>
+								<span class="elementor-progress-percentage">13%</span>
+						</div>
+	</div>
+			</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+
+			<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+			<div class="elementor-widget-container">
+					<span class="elementor-title">Sea Lion</span>
+
+	<div class="elementor-progress-wrapper progress-sealion" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" aria-valuetext="Current State">
+		<div class="elementor-progress-bar" data-max="10">
+			<span class="elementor-progress-text">Current State</span>
+								<span class="elementor-progress-percentage">10%</span>
+						</div>
+	</div>
+			</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+
+	<!-- Divider -->
+			<section class="elementor-element elementor-element-7429904 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7429904" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+			<div class="elementor-row">
+			<div class="elementor-element elementor-element-fd23637 elementor-column elementor-col-100 elementor-top-column" data-id="fd23637" data-element_type="column">
+		<div class="elementor-column-wrap  elementor-element-populated">
+				<div class="elementor-widget-wrap">
+			<div class="elementor-element elementor-element-087b2b0 elementor-widget elementor-widget-divider" data-id="087b2b0" data-element_type="widget" data-widget_type="divider.default">
+			<div class="elementor-widget-container">
+				<div class="elementor-divider">
+		<span class="elementor-divider-separator"></span>
+	</div>
+			</div>
+			</div>
+					</div>
+		</div>
+	</div>
+					</div>
+		</div>
+	</section>
+
+
+<!-- Header -->
+				<section id = "2" class="elementor-element elementor-element-f0df4eb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f0df4eb" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-9e3c934 elementor-column elementor-col-100 elementor-top-column" data-id="9e3c934" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3d20e8a elementor-invisible elementor-widget elementor-widget-heading" data-id="3d20e8a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Krusty Combo</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+				<div class="elementor-widget-container">
+						<span class="elementor-title">Leatherblack Turtle</span>
+
+		<div class="elementor-progress-wrapper progress-leatherblack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Current State">
+			<div class="elementor-progress-bar" data-max="50">
+				<span class="elementor-progress-text">Current State</span>
+									<span class="elementor-progress-percentage">50%</span>
+							</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+				<div class="elementor-widget-container">
+						<span class="elementor-title">Salmon</span>
+
+		<div class="elementor-progress-wrapper progress-salmon" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" aria-valuetext="Current State">
+			<div class="elementor-progress-bar" data-max="30">
+				<span class="elementor-progress-text">Current State</span>
+									<span class="elementor-progress-percentage">30%</span>
+							</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+		<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+				<div class="elementor-widget-container">
+						<span class="elementor-title">Seahorse</span>
+
+		<div class="elementor-progress-wrapper progress-seahorse" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" aria-valuetext="Current State">
+			<div class="elementor-progress-bar" data-max="20">
+				<span class="elementor-progress-text">Current State</span>
+									<span class="elementor-progress-percentage">20%</span>
+							</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+				<div class="elementor-widget-container">
+						<span class="elementor-title">Coral</span>
+
+		<div class="elementor-progress-wrapper progress-coral" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Current State">
+			<div class="elementor-progress-bar" data-max="50">
+				<span class="elementor-progress-text">Current State</span>
+									<span class="elementor-progress-percentage">50%</span>
+							</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+				<div class="elementor-widget-container">
+						<span class="elementor-title">Giant Clam</span>
+
+		<div class="elementor-progress-wrapper progress-clam" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5" aria-valuetext="Current State">
+			<div class="elementor-progress-bar" data-max="5">
+				<span class="elementor-progress-text">Current State</span>
+									<span class="elementor-progress-percentage">5%</span>
+							</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+				<div class="elementor-widget-container">
+						<span class="elementor-title">Gray Whale</span>
+
+		<div class="elementor-progress-wrapper progress-whale" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="13" aria-valuetext="Current State">
+			<div class="elementor-progress-bar" data-max="13">
+				<span class="elementor-progress-text">Current State</span>
+									<span class="elementor-progress-percentage">13%</span>
+							</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+
+				<section class="elementor-element elementor-element-3d63964 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3d63964" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4f6f06f elementor-column elementor-col-100 elementor-top-column" data-id="4f6f06f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-87a4d7e elementor-widget elementor-widget-progress" data-id="87a4d7e" data-element_type="widget" data-widget_type="progress.default">
+				<div class="elementor-widget-container">
+						<span class="elementor-title">Sea Lion</span>
+
+		<div class="elementor-progress-wrapper progress-sealion" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" aria-valuetext="Current State">
+			<div class="elementor-progress-bar" data-max="10">
+				<span class="elementor-progress-text">Current State</span>
+									<span class="elementor-progress-percentage">10%</span>
+							</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+
+		<!-- Divider -->
+				<section class="elementor-element elementor-element-7429904 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7429904" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-fd23637 elementor-column elementor-col-100 elementor-top-column" data-id="fd23637" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-087b2b0 elementor-widget elementor-widget-divider" data-id="087b2b0" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator"></span>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<div class="scrolling-box">
 		<!-- Header -->
-				<section id = "1" class="elementor-element elementor-element-f0df4eb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f0df4eb" data-element_type="section">
+				<section id = "2" class="elementor-element elementor-element-f0df4eb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f0df4eb" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
 				<div class="elementor-element elementor-element-9e3c934 elementor-column elementor-col-100 elementor-top-column" data-id="9e3c934" data-element_type="column">
@@ -436,7 +868,7 @@
 		</section>
 
 		<!-- Krabby Pattie -->
-				<section id = "2" class="elementor-element elementor-element-f0df4eb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f0df4eb" data-element_type="section">
+				<section id = "3" class="elementor-element elementor-element-f0df4eb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f0df4eb" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
 				<div class="elementor-element elementor-element-9e3c934 elementor-column elementor-col-100 elementor-top-column" data-id="9e3c934" data-element_type="column">
@@ -656,7 +1088,7 @@
 
 		<!-- Krabby Pattie -->
 
-			<section id = "3" class="elementor-element elementor-element-f0df4eb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f0df4eb" data-element_type="section">
+			<section id = "4" class="elementor-element elementor-element-f0df4eb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f0df4eb" data-element_type="section">
 					<div class="elementor-container elementor-column-gap-default">
 			<div class="elementor-row">
 			<div class="elementor-element elementor-element-9e3c934 elementor-column elementor-col-100 elementor-top-column" data-id="9e3c934" data-element_type="column">
@@ -828,7 +1260,7 @@
 				<span class="elementor-title">Sea Lion</span>
 
 		<div class="elementor-progress-wrapper progress-sealion" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" aria-valuetext="Current State">
-		<div class="elementor-progress-bar" data-max="10">
+		<div class="elementor-progress-bar " data-max="10">
 		<span class="elementor-progress-text">Current State</span>
 							<span class="elementor-progress-percentage">10%</span>
 					</div>
@@ -844,9 +1276,31 @@
 
 
 
-
-
-
+		<section class="elementor-element elementor-element-7429904 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7429904" data-element_type="section">
+			<div class="elementor-container elementor-column-gap-default">
+	<div class="elementor-row">
+	<div class="elementor-element elementor-element-fd23637 elementor-column elementor-col-100 elementor-top-column" data-id="fd23637" data-element_type="column">
+<div class="elementor-column-wrap  elementor-element-populated">
+		<div class="elementor-widget-wrap">
+	<div class="elementor-element elementor-element-087b2b0 elementor-widget elementor-widget-divider" data-id="087b2b0" data-element_type="widget" data-widget_type="divider.default">
+	<div class="elementor-widget-container">
+		<div class="elementor-divider">
+<span class="elementor-divider-separator"></span>
+</div>
+	</div>
+	</div>
+			</div>
+</div>
+</div>
+			</div>
+</div>
+</section>
+	<div class="Summary Report">
+			<h2 class="elementor-heading-title elementor-size-default" id="sumrept">Summary Report</h2>
+		<div class="burgcontainer" id="5">
+			<canvas id="barChart" width="500" height="500"></canvas>
+		</div>
+	</div>
 
 
 
