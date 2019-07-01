@@ -8,33 +8,41 @@
   <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
   <script src="chart.js"></script>
+
+  <script src="jquery_3.3.1.js"></script>
+  <!-- <script src="jquery_datatables.js"></script>
+  <link rel="stylesheet" href="table_sort.css"> -->
 </head>
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <div class="rightdiv">
     <div id="BTNONE">
-        <button ID="Button1" value="Button" >General Product Report</button>
-        <button ID="Button1" value="Button">Time Series Product Report</button>
+      <button ID="Button1" value="Button">General Product Report</button>
+      <button ID="Button1" value="Button">Time Series Product Report</button>
     </div>
   </div>
 
 
   <div id="Prod">
-      <button id="donutchart Button2" type="button" onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab" style="display: none;">Pie Chart</button>
-      <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart'));" value="New Tab" style="display: none;">Bar Chart</button>
-      <button id="Button2" type="button" value="New Tab" style="display: none;">Monthly</button>
-      <button id="Button2" type="button" value="New Tab" style="display: none;">Weekly</button>
-      <button id="Button2" type="button" onclick="chartDest();" value="New Tab" style="display: none;">Specific Date</button>
+    <button id="donutchart Button2" type="button" onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab"
+      style="display: none;">Pie Chart</button>
+    <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart'));"
+      value="New Tab" style="display: none;">Bar Chart</button>
+    <button id="Button2" type="button" value="New Tab" style="display: none;">Monthly</button>
+    <button id="Button2" type="button" value="New Tab" style="display: none;">Weekly</button>
+    <button id="Button2" type="button" onclick="chartDest();" value="New Tab" style="display: none;">Specific
+      Date</button>
+    <button id="Button2" type="button" value="New Tab" style="display: none;">Raw Data</button>
   </div>
-  <div id="date" ><input type="date" name="date" id="dateseries" value="New Tab" style="display: none;">
+  <div id="date"><input type="date" name="date" id="dateseries" value="New Tab" style="display: none;">
   </div>
 
   <button id="destory" type="button" onclick="chartDest()">Destroy</button>
 
   <div class="burgcontainer">
-      <canvas id="doughnutChart" width="500" height="500"></canvas>
-    </div>
+    <canvas id="doughnutChart" width="500" height="500"></canvas>
+  </div>
   <div class="burgcontainer">
     <canvas id="barChart" width="500" height="500"></canvas>
   </div>
@@ -44,46 +52,108 @@
   <div class="burgcontainer">
     <canvas id="lineWeek" width="600" height="500"></canvas>
   </div>
+  <div class="burgcontainer" id="raw">
+    <p id="table" class="display"></p>
+    
+  </div>
+
 
   <script>
+    //General Product report
     $("#BTNONE button:eq(0)").on('click', function () {
       $("#Prod button:eq(0)").show();
       $("#Prod button:eq(1)").show();
       $("#Prod button:eq(2)").hide();
       $("#Prod button:eq(3)").hide();
       $("#Prod button:eq(4)").hide();
+      $("#Prod button:eq(5)").hide();
       $("#date input:eq(0)").hide();
+      $("#raw p:eq(0)").hide();
+
       chartDest();
     });
 
+    // Time Series Product Report
     $("#BTNONE button:eq(1)").on('click', function () {
       $("#Prod button:eq(0)").hide();
       $("#Prod button:eq(1)").hide();
       $("#Prod button:eq(2)").show();
       $("#Prod button:eq(3)").show();
       $("#Prod button:eq(4)").show();
+      $("#Prod button:eq(5)").show();
       chartDest();
     });
     // load date specified
     $("#Prod button:eq(4)").on('click', function () {
       $("#date input:eq(0)").show();
+      $("#raw p:eq(0)").hide();
       chartDest();
     });
     //Load week
     $("#Prod button:eq(3)").on('click', function () {
       $("#date input:eq(0)").hide();
+      $("#raw p:eq(0)").hide();
       chartDest();
       loadweek(document.getElementById('lineWeek'));
     });
     // Load month
     $("#Prod button:eq(2)").on('click', function () {
       $("#date input:eq(0)").hide();
+      $("#raw p:eq(0)").hide();
       chartDest();
       loadline('lineMonth');
     });
 
-  </script>
+    $("#Prod button:eq(5)").on('click', function () {
+      $("#date input:eq(0)").hide();
+      $("#raw p:eq(0)").show();
+      chartDest();
+      var sample = [{
+        'datetime': '2019-05-27 08:02:58',
+        'burger': 'Krusty Combo',
+        'species': 'leatherback turtle'
+      }, {
+        'datetime': '2019-05-27 08:04:47',
+        'burger': 'Krabby Pattie',
+        'species': 'salmon'
+      }, {
+        'datetime': '2019-05-27 08:06:37',
+        'burger': 'Krusty Deluxe',
+        'species': 'seahorse'
+      }, {
+        'datetime': '2019-05-27 08:08:35',
+        'burger': 'Krabby Pattie',
+        'species': 'sea lion'
+      }, {
+        'datetime': '2019-05-27 08:10:32',
+        'burger': 'Krabby Pattie',
+        'species': 'sea lion'
+      }, {
+        'datetime': '2019-05-27 08:12:42',
+        'burger': 'Krabby Pattie',
+        'species': 'leatherback turtle'
+      }, {
+        'datetime': '2019-05-27 08:14:48',
+        'burger': 'Krabby Pattie',
+        'species': 'coral'
+      }]
 
+      // $.getJSON( "sample.json", function(obj) {
+      var table = CreateTableFromJSON(sample);
+
+      var divContainer = document.getElementById("table");
+      divContainer.innerHTML = "";
+      divContainer.appendChild(table);
+      
+        // $('#example').DataTable({
+        //   "order": [
+        //     [3, "desc"]
+        //   ]
+        // });
+      
+      
+    });
+  </script>
 </body>
 
 </html>

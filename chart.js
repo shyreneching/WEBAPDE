@@ -1,4 +1,5 @@
 var chart;
+var tabledata;
 
 function loaddoughnut(ctx) {
     chart = new Chart(ctx, {
@@ -307,7 +308,80 @@ function chartDest() {
 
 }
 
+function CreateTableFromJSON(data) {
+    tabledata = data;
+    // EXTRACT VALUE FOR HTML HEADER. 
+    // var col = [];
+    // for (var i = 0; i < tabledata.length; i++) {
+    //     for (var key in tabledata[i]) {
+    //         if (col.indexOf(key) === -1) {
+    //             col.push(key);
+    //         }
+    //     }
+    // }
 
+    // // CREATE DYNAMIC TABLE.
+    // var table = document.createElement("table");
+    // table.id = "example" 
+    // table.className="display"
+    // // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+    // var tr = table.insertRow(-1);                   // TABLE ROW.
+
+    // for (var i = 0; i < col.length; i++) {
+    //     var th = document.createElement("th");      // TABLE HEADER.
+    //     th.innerHTML = col[i];
+    //     tr.appendChild(th);
+    // }
+
+    // // ADD JSON DATA TO THE TABLE AS ROWS.
+    // for (var i = 0; i < tabledata.length; i++) {
+
+    //     tr = table.insertRow(-1);
+
+    //     for (var j = 0; j < col.length; j++) {
+    //         var tabCell = tr.insertCell(-1);
+    //         tabCell.innerHTML = tabledata[i][col[j]];
+    //     }
+    // }
+
+    var col = ['No.','Datetime','Burger','Species'];
+    
+    var table = document.createElement("table");
+    var tr = table.insertRow(-1);                   // TABLE ROW.
+
+    for (var i = 0; i < col.length; i++) {
+        var th = document.createElement("th");      // TABLE HEADER.
+        th.innerHTML = col[i];
+        tr.appendChild(th);
+    }
+
+    var ctr = 0;
+    for(var m = 0; m < tabledata.length; m++) {
+        tr = table.insertRow(-1);
+        var data = tabledata[m];
+      
+        for(var i = 0; i < col.length; i++) {
+            var tabCell = tr.insertCell(-1);            
+            if(i == 0) {
+                tabCell.innerHTML = ctr+1;
+            } else if(i == 1) {
+                tabCell.innerHTML = data.datetime;
+            } else if(i == 2) {
+                tabCell.innerHTML = data.burger;
+            } else if(i == 3) {
+                tabCell.innerHTML = data.species;
+            }
+        }
+        ctr++;
+    }
+    
+    return table;
+    // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+    // var divContainer = document.getElementById("table");
+    // divContainer.innerHTML = "";
+    // divContainer.appendChild(table);
+}
 
 
 
