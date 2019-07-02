@@ -8,49 +8,209 @@
   <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
   <script src="chart.js"></script>
+
+  <script src="jquery_3.3.1.js"></script>
+  <!-- <script src="jquery_datatables.js"></script>
+  <link rel="stylesheet" href="table_sort.css"> -->
+
+  <!-- calendar -->
+  <link href="dist/vanillaCalendar.css" rel="stylesheet">
+  
+
 </head>
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <div class="rightdiv">
     <div id="BTNONE">
-        <button ID="Button1" value="Button" >General Product Report</button>
-        <button ID="Button1" value="Button">Time Series Product Report</button>
+      <button ID="Button1" value="Button">General Product Report</button>
+      <button ID="Button1" value="Button">Time Series Product Report</button>
     </div>
   </div>
 
 
   <div id="Prod">
-      <button id="donutchart Button2" type="button" onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab" style="display: none;">Pie Chart</button>
-      <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart'));" value="New Tab" style="display: none;">Bar Chart</button>
+    <button id="donutchart Button2" type="button" onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab"
+      style="display: none;">Pie Chart</button>
+    <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart'));"
+      value="New Tab" style="display: none;">Bar Chart</button>
+    <button id="Button2" type="button" value="New Tab" style="display: none;">Monthly</button>
+    <button id="Button2" type="button" value="New Tab" style="display: none;">Weekly</button>
+    <button id="Button2" type="button" onclick="chartDest();" value="New Tab" style="display: none;">Specific
+      Date</button>
+    <button id="Button2" type="button" value="New Tab" style="display: none;">Raw Data</button>
   </div>
-  <button id="destory" type="button" onclick="chartDest()">Destroy</button>
+  <div id="date">
+      
+      <div class="cont" style="display: none;">
+          <button id="Button2" type="button" onclick="timesales('timeSales', givepicked())">Show Chart</button>
+          <div id="v-cal">
+            <div class="vcal-header">
+              <button class="vcal-btn" data-calendar-toggle="previous">
+                <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
+                </svg>
+              </button>     
+              <div class="vcal-header__label" data-calendar-label="month">
+                March 2017
+              </div>
 
-  <div class="container">
-      <canvas id="doughnutChart" width="400" height="400"></canvas>
-    </div>
-  <div class="container">
-    <canvas id="barChart" width="400" height="400"></canvas>
-  </div>
-  <div class="container">
-    <canvas id="lineChart" width="400" height="400"></canvas>
+              <button class="vcal-btn" data-calendar-toggle="next">
+                <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="vcal-week">
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+              <span>Sun</span>
+            </div>
+            <div class="vcal-body" data-calendar-area="month"></div>
+          </div>
+          
+          <p class="demo-picked">
+            Date picked:
+            <span data-calendar-label="picked"></span>
+          </p>
+          
+          <canvas id="timeSales" width="500" height="500"></canvas>
+        </div>
   </div>
 
+  <!-- <button id="destory" type="button" onclick="chartDest()">Destroy</button> -->
+
+  <div class="burgcontainer">
+    <canvas id="doughnutChart" width="500" height="500"></canvas>
+  </div>
+  <div class="burgcontainer">
+    <canvas id="barChart" width="500" height="500"></canvas>
+  </div>
+  <div class="burgcontainer">
+    <canvas id="lineMonth" width="700" height="600"></canvas>
+  </div>
+  <div class="burgcontainer">
+    <canvas id="lineWeek" width="600" height="500"></canvas>
+  </div>
+  <div class="burgcontainer" id="raw">
+    <p id="table" class="display"></p>
+
+  </div>
+
+  <script src="dist/vanillaCalendar.js" type="text/javascript"></script>
   <script>
+    //General Product report
     $("#BTNONE button:eq(0)").on('click', function () {
       $("#Prod button:eq(0)").show();
       $("#Prod button:eq(1)").show();
+      $("#Prod button:eq(2)").hide();
+      $("#Prod button:eq(3)").hide();
+      $("#Prod button:eq(4)").hide();
+      $("#Prod button:eq(5)").hide();
+      $("#date div:eq(0)").hide();
+      $("#raw p:eq(0)").hide();
+
       chartDest();
     });
 
+    // Time Series Product Report
     $("#BTNONE button:eq(1)").on('click', function () {
       $("#Prod button:eq(0)").hide();
       $("#Prod button:eq(1)").hide();
+      $("#Prod button:eq(2)").show();
+      $("#Prod button:eq(3)").show();
+      $("#Prod button:eq(4)").show();
+      $("#Prod button:eq(5)").show();
       chartDest();
-      loadline('lineChart');
+    });
+    // load date specified
+    z = 0;
+    
+    $("#Prod button:eq(4)").on('click', function () {
+      $("#date div:eq(0)").show();
+      $("#raw p:eq(0)").hide();
+      chartDest();
+      if(z==0){
+      vanillaCalendar.init({
+          disablePastDays: false
+        });
+        z++;
+      }
+    });
+    //Load week
+    $("#Prod button:eq(3)").on('click', function () {
+      $("#date div:eq(0)").hide();
+      $("#raw p:eq(0)").hide();
+      chartDest();
+      loadweek(document.getElementById('lineWeek'));
+    });
+    // Load month
+    $("#Prod button:eq(2)").on('click', function () {
+      $("#date div:eq(0)").hide();
+      $("#raw p:eq(0)").hide();
+      chartDest();
+      loadline('lineMonth');
+    });
+
+    //for table
+    $("#Prod button:eq(5)").on('click', function () {
+      $("#date div:eq(0)").hide();
+      $("#raw p:eq(0)").show();
+      chartDest();
+      var sample = [{
+        'datetime': '2019-05-27 08:02:58',
+        'burger': 'Krusty Combo',
+        'species': 'leatherback turtle'
+      }, {
+        'datetime': '2019-05-27 08:04:47',
+        'burger': 'Krabby Pattie',
+        'species': 'salmon'
+      }, {
+        'datetime': '2019-05-27 08:06:37',
+        'burger': 'Krusty Deluxe',
+        'species': 'seahorse'
+      }, {
+        'datetime': '2019-05-27 08:08:35',
+        'burger': 'Krabby Pattie',
+        'species': 'sea lion'
+      }, {
+        'datetime': '2019-05-27 08:10:32',
+        'burger': 'Krabby Pattie',
+        'species': 'sea lion'
+      }, {
+        'datetime': '2019-05-27 08:12:42',
+        'burger': 'Krabby Pattie',
+        'species': 'leatherback turtle'
+      }, {
+        'datetime': '2019-05-27 08:14:48',
+        'burger': 'Krabby Pattie',
+        'species': 'coral'
+      }]
+
+      // $.getJSON( "sample.json", function(obj) {
+      var table = CreateTableFromJSON(sample);
+
+      var divContainer = document.getElementById("table");
+      divContainer.innerHTML = "";
+      divContainer.appendChild(table);
+
+      // $('#example').DataTable({
+      //   "order": [
+      //     [3, "desc"]
+      //   ]
+      // });
+
+      // window.addEventListener('load', function () {
+      //   vanillaCalendar.init({
+      //     disablePastDays: false
+      //   });
+      // })
     });
   </script>
-
 </body>
 
 </html>
