@@ -15,7 +15,7 @@
 
   <!-- calendar -->
   <link href="dist/vanillaCalendar.css" rel="stylesheet">
-  
+
 
 </head>
 
@@ -41,45 +41,45 @@
     <button id="Button2" type="button" value="New Tab" style="display: none;">Raw Data</button>
   </div>
   <div id="date">
-      
-      <div class="cont" style="display: none;">
-          <button id="Button2" type="button" onclick="timesales('timeSales', givepicked())">Show Chart</button>
-          <div id="v-cal">
-            <div class="vcal-header">
-              <button class="vcal-btn" data-calendar-toggle="previous">
-                <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
-                </svg>
-              </button>     
-              <div class="vcal-header__label" data-calendar-label="month">
-                March 2017
-              </div>
 
-              <button class="vcal-btn" data-calendar-toggle="next">
-                <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
-                </svg>
-              </button>
-            </div>
-            <div class="vcal-week">
-              <span>Mon</span>
-              <span>Tue</span>
-              <span>Wed</span>
-              <span>Thu</span>
-              <span>Fri</span>
-              <span>Sat</span>
-              <span>Sun</span>
-            </div>
-            <div class="vcal-body" data-calendar-area="month"></div>
+    <div class="cont" style="display: none;">
+      <button id="Button2" type="button" onclick="timesales('timeSales', givepicked())">Show Chart</button>
+      <div id="v-cal">
+        <div class="vcal-header">
+          <button class="vcal-btn" data-calendar-toggle="previous">
+            <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
+            </svg>
+          </button>
+          <div class="vcal-header__label" data-calendar-label="month">
+            March 2017
           </div>
-          
-          <p class="demo-picked">
-            Date picked:
-            <span data-calendar-label="picked"></span>
-          </p>
-          
-          <canvas id="timeSales" width="500" height="500"></canvas>
+
+          <button class="vcal-btn" data-calendar-toggle="next">
+            <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+            </svg>
+          </button>
         </div>
+        <div class="vcal-week">
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+          <span>Sun</span>
+        </div>
+        <div class="vcal-body" data-calendar-area="month"></div>
+      </div>
+
+      <p class="demo-picked">
+        Date picked:
+        <span data-calendar-label="picked"></span>
+      </p>
+
+      <canvas id="timeSales" width="500" height="500"></canvas>
+    </div>
   </div>
 
   <!-- <button id="destory" type="button" onclick="chartDest()">Destroy</button> -->
@@ -103,6 +103,16 @@
 
   <script src="dist/vanillaCalendar.js" type="text/javascript"></script>
   <script>
+    window.addEventListener('load', function () {
+      loadproducts()
+      loadproductpercent()
+      loadKCmonthlysales()
+      loadKPmonthlysales()
+      loadKDmonthlysales()
+      loadKCweeklysales()
+      loadKPweeklysales()
+      loadKDweeklysales()
+    })
     //General Product report
     $("#BTNONE button:eq(0)").on('click', function () {
       $("#Prod button:eq(0)").show();
@@ -129,13 +139,13 @@
     });
     // load date specified
     z = 0;
-    
+
     $("#Prod button:eq(4)").on('click', function () {
       $("#date div:eq(0)").show();
       $("#raw p:eq(0)").hide();
       chartDest();
-      if(z==0){
-      vanillaCalendar.init({
+      if (z == 0) {
+        vanillaCalendar.init({
           disablePastDays: false
         });
         z++;
