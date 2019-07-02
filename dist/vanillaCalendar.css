@@ -11,12 +11,9 @@
     border: 1px solid #e7e9ed;
     -webkit-box-shadow: 0 4px 22px 0 rgba(0, 0, 0, .05);
     box-shadow: 0 4px 22px 0 rgba(0, 0, 0, .05);
-    
+    margin: 0 auto;
     overflow: hidden;
-    width: 100%;
-
-    display: inline-block;
-    
+    width: 100%
 }
 
 #v-cal .vcal-btn {
@@ -82,10 +79,10 @@
     flex: 0 0 14.28%;
     font-size: 13.2px;
     /* font-size: 1.2rem; */
-    font-weight: 100;
+    font-weight: 700;
     max-width: 14.28%;
-    padding: 19.2px 22.4px;
-    padding: 1.2rem 1.4rem;
+    padding: 13.2px 19.4px;
+    /* padding: 1.2rem 1.4rem; */
     text-align: center;
     text-transform: uppercase
 }
@@ -117,8 +114,8 @@
     -ms-flex: 0 0 14.28%;
     flex: 0 0 14.28%;
     max-width: 14.28%;
-    padding: 10.2px 0;
-    /* padding: 1.2rem 0 */
+    padding: 19.2px 0;
+    padding: 1.2rem 0
 }
 
 #v-cal .vcal-date--active {

@@ -1,5 +1,119 @@
 var chart;
 var tabledata;
+var custData;
+
+
+// General Customer Sales               Krusty Combo
+// Leatherblack Turtle      GSlb        Leatherblack Turtle     KClb
+// Salmon                   GSsm        Salmon                  KCsm
+// Seahorse                 GSsh        Seahorse                KCsh
+// Coral                    GScr        Coral                   KCcr
+// Giant Clam               GSgc        Giant Clam              KCgc
+// Gray Whale               GSgw        Gray Whale              KCgw
+// Sealion                  GSsl        Sealion                 KCsl
+//
+// Krabbie Patty                        Krusty Deluxe
+// Leatherblack Turtle      KPlb        Leatherblack Turtle     KDlb
+// Salmon                   KPsm        Salmon                  KDsm
+// Seahorse                 KPsh        Seahorse                KDsh
+// Coral                    KPcr        Coral                   KDcr
+// Giant Clam               KPgc        Giant Clam              KDgc
+// Gray Whale               KPgw        Gray Whale              KDgw
+// Sealion                  KPsl        Sealion                 KDsl
+function getcustData(){
+    custData = [{
+        id: "GSlb", 
+        percent : 20, 
+    },{
+        id: "GSsm", 
+        percent : 10, 
+    },{
+        id: "GSsh", 
+        percent : 5, 
+    },{
+        id: "GScr", 
+        percent : 20, 
+    },{
+        id: "GSgc", 
+        percent : 10, 
+    },{
+        id: "GSgw", 
+        percent : 30, 
+    },{
+        id: "GSsl", 
+        percent : 5, 
+    },{
+        id: "KClb", 
+        percent : 10, 
+    },{
+        id: "KCsm", 
+        percent : 20, 
+    },{
+        id: "KCsh", 
+        percent : 20, 
+    },{
+        id: "KCcr", 
+        percent : 30, 
+    },{
+        id: "KCgc", 
+        percent : 10, 
+    },{
+        id: "KCgw", 
+        percent : 5, 
+    },{
+        id: "KCsl", 
+        percent : 5, 
+    },{
+        id: "KPlb", 
+        percent : 20, 
+    },{
+        id: "KPsm", 
+        percent : 10, 
+    },{
+        id: "KPsh", 
+        percent : 5, 
+    },{
+        id: "KPcr", 
+        percent : 20, 
+    },{
+        id: "KPgc", 
+        percent : 10, 
+    },{
+        id: "KPgw", 
+        percent : 30, 
+    },{
+        id: "KPsl", 
+        percent : 5, 
+    },{
+        id: "KDlb", 
+        percent : 5, 
+    },{
+        id: "KDsm", 
+        percent : 10, 
+    },{
+        id: "KDsh", 
+        percent : 20, 
+    },{
+        id: "KDcr", 
+        percent : 10, 
+    },{
+        id: "KDgc", 
+        percent : 30, 
+    },{
+        id: "KDgw", 
+        percent : 20, 
+    },{
+        id: "KDsl", 
+        percent : 5, 
+    }
+    ]
+
+    return custData;
+
+}
+
+
+
 
 function loaddoughnut(ctx) {
     chart = new Chart(ctx, {

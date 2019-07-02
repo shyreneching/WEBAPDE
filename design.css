@@ -1,188 +1,200 @@
 .cd-top--is-visible {
-    visibility: visible;
-    opacity: 1;
-    text-align: right;
+  visibility: visible;
+  opacity: 1;
+  text-align: right;
 }
 
 .cd-top--fade-out {
-    opacity: .5;
+  opacity: .5;
 }
 
 .scroller {
-    text-align: center;
-    display: block;
-    margin: auto;
-    margin-left: auto;
-    margin-right: auto;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 
-    /* width: 50%; */
+  /* width: 50%; */
 }
 
 .product {
-    width: 100px;
-    height: 200px;
-    object-fit: cover;
-    object-position: 0% 0;
+  width: 100px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 0% 0;
 
 }
 
 .product:hover {
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
 }
 
 #return-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.7);
-    width: 50px;
-    height: 50px;
-    display: block;
-    text-decoration: none;
-    -webkit-border-radius: 35px;
-    -moz-border-radius: 35px;
-    border-radius: 35px;
-    display: none;
-    -webkit-transition: all 0.3s linear;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #return-to-top i {
-    color: #fff;
-    margin: 0;
-    position: relative;
-    left: 16px;
-    top: 13px;
-    font-size: 19px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #return-to-top:hover {
-    background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 #return-to-top:hover i {
-    color: #fff;
-    top: 5px;
+  color: #fff;
+  top: 5px;
 }
 
 
 /* Extra Things */
 body {
-    background: #eee;
-    font-family: 'Open Sans', sans-serif;
+  background: #eee;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h3 {
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 50px;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 50px;
 }
 
 h3 i {
-    color: #444;
+  color: #444;
 }
 
 
 #myBtn {
-    display: none;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 15px;
-  }
-  
-  #myBtn:hover {
-    background-color: #555;
-  }
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 
 /* For chart design */
-.burgcontainer{
-    height: 600px;
-    width: 600px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    padding: 5px;
-  }
+.burgcontainer {
+  height: 600px;
+  width: 600px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding: 5px;
+}
 
-  #lineMonth{
-    height: 600px;
-    width: 700px;
-   
-  }
+#lineMonth {
+  height: 600px;
+  width: 700px;
 
-  #sumrept{
-      text-align: center;
-  }
+}
+
+#sumrept {
+  text-align: center;
+}
 
 
-  th,
-    td,
-    p,
-    input {
-      font: 14px Verdana;
-    }
+th,
+td,
+p,
+input {
+  font: 14px Verdana;
+}
 
-    table,
-    th,
-    td {
-      border: solid 2px black;
-      border-collapse: collapse;
-      padding: 3px 5px;
-      text-align: center;
-    }
+table,
+th,
+td {
+  border: solid 2px black;
+  border-collapse: collapse;
+  padding: 3px 5px;
+  text-align: center;
+}
 
-    th {
-      font-weight: bold;
-    }
+th {
+  font-weight: bold;
+}
 
-		a,
-		a:visited {
-			color: #0A9297;
-		}
+a,
+a:visited {
+  color: #0A9297;
+}
 
-		.cont {
-      height: 300px;
-			width: 400px;
-			/* margin: 1.6rem auto; */
-			max-width: 42rem;
-      text-align: left;
-      margin-left: 10%
-		}
+.cont {
+  height: 500px;
+  width: 400px;
+  /* margin: 1.6rem auto; */
+  max-width: 42rem;
+  text-align: left;
+  margin-left: 10%
+}
 
-		.demo-picked {
-			font-size: 12px;
-			text-align: center;
-		}
+.demo-picked {
+  font-size: 12px;
+  text-align: center;
+}
 
-		.demo-picked span {
-			font-weight: bold;
-    }
-    
-    #timeSales{
-      display: inline-block;
-      position: relative;
-      margin-top:-400px;
-      margin-left: 450px;
-    }
-    
-    #button1, #button2{
-      padding: 3px;
-    }
+.demo-picked span {
+  font-weight: bold;
+}
+
+#timeSales {
+  display: inline-block;
+  position: relative;
+  margin-top: -400px;
+  margin-left: 450px;
+  height: 500px;
+}
+
+#button1,
+#button2 {
+  padding: 3px;
+}
+
+.sumchart {
+  height: 600px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding: 5px;
+}

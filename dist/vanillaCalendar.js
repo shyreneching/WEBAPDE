@@ -1,4 +1,3 @@
-var picked;
 var vanillaCalendar = {
     month: document.querySelectorAll('[data-calendar-area="month"]')[0],
     next: document.querySelectorAll('[data-calendar-toggle="next"]')[0],
@@ -31,10 +30,9 @@ var vanillaCalendar = {
         var t = this;
         this.activeDates = document.querySelectorAll('[data-calendar-status="active"]');
         for (var e = 0; e < this.activeDates.length; e++) this.activeDates[e].addEventListener("click", function (e) {
-            document.querySelectorAll('[data-calendar-label="picked"]')[0].innerHTML = this.dataset.calendarDate.substring(0, 24)
+            document.querySelectorAll('[data-calendar-label="picked"]')[0].innerHTML = this.dataset.calendarDate.substring(0, 24), t.removeActiveClass(), this.classList.add("vcal-date--selected")
+            console.log(this.dataset.calendarDate, this.classList.add("vcal-date--selected"))
             picked = this.dataset.calendarDate.substring(0, 24);
-            console.log(this.dataset.calendarDate.substring(0, 24))
-            console.log(givepicked())
         })
     },
     createMonth: function () {
