@@ -1,0 +1,87 @@
+<html>
+    <head>
+            <script src="jquery.js"></script>
+        <style>
+            #submit {
+                padding:10px 30px;
+                background-color: lightblue;
+                display: inline-block;
+            }
+        </style>
+        <script>
+            var obj;
+            $(document).ready(function(){
+
+                $("#input_open").change(function(e) {
+                    for (var i = 0; i < e.target.files.length; i++) {
+                        var filename = e.target.files[i].name;
+                        console.log("12");
+                        $.get(filename, function(data) {
+                            console.log("34");
+                            upload($.parseJSON(data))
+                        })
+                    }
+
+                });
+
+                $.get('krustykrab_array.json', function(data) {
+                    start($.parseJSON(data));
+                })
+
+            })
+
+            function start(something) {
+                obj = something.sales;
+                var prev = JSON.parse(window.localStorage.getItem("data"));
+                if(prev != undefined) {
+                    obj = prev;
+                }
+                // constructChartComponent(obj);
+                // init();
+            }
+            
+
+            function upload(file) {
+                console.log("0")
+                if(file != undefined) {
+                    console.log("1");
+                    var alldata = obj.concat(file);
+                    console.log("2");
+                    obj = alldata;
+                    console.log("3");
+                    window.localStorage.setItem("data", JSON.stringify(obj));
+                    console.log("4");
+                    console.log(JSON.parse(window.localStorage.getItem("data")));
+                }
+            }
+
+            function onOpenChange() {
+                // var filePath = $("#input_open").val();
+                // var startIndex = filePath.indexOf('\\') >= 0 ? filePath.lastIndexOf('\\') : filePath.lastIndexOf('/');
+                // var filename = filePath.substring(startIndex);
+                // if(filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                //     filename = filename.substring(1);
+                // }
+
+                // $.ajax({
+                //     url: filename,
+                //     success: onOpenLoad
+                // });
+                // $.get($("#input_open").val()), function(data) {
+                //     console.log($.parseJSON(data));
+                // }
+            }
+
+            // function onOpenLoad(fileContent) {
+            //     var data = JSON.parse(fileContent);
+            //     // do something with the data
+            //     alert("lala");
+            // }
+        </script>
+    </head>
+    <body>
+        <input type="file" id="input_open" class="input_file" accept=".json"/>
+        <div id="submit">Submit</div>
+        <div id="result"></div>
+    </body>
+</html>
