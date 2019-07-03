@@ -1,0 +1,117 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #26B9C8;
+}
+
+.add_file_portion {
+    margin: 0px auto;
+    /* height: 400px;
+    width: 400px; */
+    /* height: 65%; */
+    /* width: 30%;
+    padding-bottom: -220%; */
+    width: 35vw;
+    height: 28vw;
+    background-color: aliceblue;
+    top:15%;
+    position: relative;
+    align-items: center;
+    box-shadow: 0 0 15px rgb(30, 125, 136);
+    color: #26B9C8;
+    font-family: 'Open Sans';
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+}
+
+/* .add_file_portion::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+} */
+
+@media screen and (min-height: 1000px) {
+    .add_file_portion {
+        top: 35%;
+        height: 40vw;
+        width: 50vw;
+        font-size: 5vw;
+    }
+}
+
+@media screen and (min-width: 900px, min-height: 900px) {
+    .add_file_portion {
+        top: 35%;
+        height: 40vw;
+        width: 50vw;
+        font-size: 5vw;
+    }
+}
+
+.js .input-file-trigger {
+    display: block;
+    padding: 1.3vw 5vw;
+    background: #26B9C8;
+    color: #fff;
+    font-size: 0.5em;
+    transition: all .4s;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family: 'Open Sans';
+    letter-spacing: 2px;
+    top: 20px;
+}
+
+.js .input-file {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    opacity: 0;
+    padding: 1.3vw 0;
+    cursor: pointer;
+}
+
+.js .input-file:hover+.input-file-trigger,
+.js .input-file:focus+.input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+    background: rgb(32, 149, 161);
+    color: rgb(255, 255, 255);
+}
+
+.file-return {
+    margin: 0;
+}
+
+.file-return:not(:empty) {
+    margin: 0.1em 0;
+}
+
+.js .file-return {
+    font-style: italic;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.js .file-return:not(:empty):before {
+    content: "Selected file: ";
+    font-style: normal;
+    font-weight: normal;
+}
+
+a {
+    font-family: 'Open Sans';
+    font-size: 3vw;
+    color: #26B9C8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(33, 152, 165);
+    transition: 500ms;
+}

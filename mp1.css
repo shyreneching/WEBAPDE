@@ -1,0 +1,218 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+/* @media screen and (min-width: 720px) {
+    .title {
+        font-size: 1.6em; // I want my title this size on a phone
+    }
+
+    .navbar {
+        width: 80%;
+        height: 180px;
+        background-color: #26B9C8;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+    }
+    .container {
+        margin: 0px auto;
+        width: 30%;
+        background-color: black;
+    }
+} */
+
+/* @media screen and (min-width: 1000px) {
+    .title {
+        font-size: 2em; // I want my title this size on a bigger tablet
+    }
+
+    .navbar {
+        width: 100%;
+         height: 180px;
+         background-color: #26B9C8;
+         margin: 0px;
+         padding: 0px;
+         position: relative;
+         overflow: hidden;
+         flex-wrap: wrap; 
+         /* justify-content: center; */
+         /* align-items: center;
+    }
+    .container {
+        margin: 0px auto;
+        width: 900px;
+        background-color: black;
+    }
+}  */
+
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: #26B9C8;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    /* display: flex;
+    flex-direction: row; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center;*/
+    z-index: 1;
+    box-shadow: 0 0 550px rgba(134, 134, 134, 0.274);
+}
+
+.container {
+    margin-top: 100px;
+    margin:0px auto;
+    /* width: 900px; */
+    width: 65%;
+    height: 200%;
+    top: 180px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.topright {
+    position: relative;
+    top: 28px;
+    left: 440px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    width: 60%;
+    position: relative;
+}
+
+.navlink {
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 2vw;
+    padding-right: 90px;
+    display: inline-block;
+    text-align: center;
+}
+
+.navlink:hover {
+    color: #BDEDF2;
+    transition: 500ms;
+}
+
+/* .container {
+    width: 100%;
+    background-color: black;
+    align-content: center;
+} */
+
+
+@media screen and (min-width: 180px) {
+    .customer {
+        margin-top: 100px;
+        width: 35%;
+        /* height: 230px; */
+        /* background-image: url("\Assets\customer_div_bg.png"); */
+         /* background-color: #8CD6DD; */
+        background-image: #fff url('Assets/customer_div_bg_with_colour_smaller_hover.png') 0 0;
+        height: 20%;
+        left: 0px;
+        top: 2%;
+        right: 0px;
+        position: relative;
+        /* z-index: 2; */
+        /* transition: all 5s ease-in-out; */
+    }
+
+    .grubs {
+        margin-top: 100px;
+        /* width: 290px;
+    height: 500px; */
+        width: 15%;
+        height: 5%;
+        background: #fff url('Assets/burgersales_div_bg_with_colour_smaller.png') 0 0;
+        /* background-color: #8CD6DD; */
+        border-radius: 10px;
+        top: 5%;
+        position: relative;
+        right: 0px;
+        left: 10%;
+        /* z-index: 3; */
+        /* transition: all 5s ease-in-out; */
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .customer {
+        margin-top: 100px;
+        /* width: 450px; */
+        width: 55%;
+        /* height: 230px; */
+        height: 20%;
+        /* background-image: url("\Assets\customer_div_bg.png"); */
+        /* background-color: #8CD6DD; */
+        background: #fff url('Assets/customer_div_bg_with_colour_smaller_hover.png') 0 0;
+        border-radius: 10px;
+        left: 0px;
+        top: 5%;
+        right: 0px;
+        position: relative;
+        /* z-index: 2; */
+         /* transition: all 5s ease-in-out; */
+    }
+
+    .grubs {
+        margin-top: 100px;
+        /* width: 290px;
+    height: 500px; */
+        width: 35%;
+        max-width: 35%;
+        height: 40%;
+        background: #fff url('Assets/burgersales_div_bg_with_colour_smaller.png') 0 0;
+        /* background-color: #8CD6DD; */
+        border-radius: 10px;
+        top: 5%;
+        position: relative;
+        right: 0px;
+        right: 0px;
+        /* z-index: 3; */
+         /* transition: all 5s ease-in-out; */
+    }
+}
+
+
+.customer:hover {
+    box-shadow: 0 0 55px rgba(134, 134, 134, 0.274);
+    /* background-color: #ade0e6; */
+    background: #ffa url('Assets/customer_div_bg_with_colour_smaller.png') 0 0;
+    position: relative;
+    /* z-index: 10; */
+    transition: 500ms;
+}
+
+.grubs:hover {
+    box-shadow: 0 0 55px rgba(134, 134, 134, 0.274);
+    background: #fff url('Assets/burgersales_div_bg_with_colour_smaller_hover.png') 0 0;
+    background-color: #6ccdd8;
+    position: relative;
+    /* z-index: 10; */
+    transition: 500ms;
+}
