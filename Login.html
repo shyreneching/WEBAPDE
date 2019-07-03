@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Login</title>
+        <script src="jquery_3.3.1.js"></script>
         <link rel="stylesheet" href="login.css">
     </head>
 
@@ -10,10 +11,14 @@
         <div class="login_portion">
             <br><br><br>
             <p class="greet">ARE YOU READY KIDS?</p>
-            <input type="text" class="username_input" placeholder="USERNAME">
+            <input type="text" class="username_input" placeholder="USERNAME" required>
             <br><br><br>
-            <input type="password" class="password_input" placeholder="PASSWORD">
-            <br><br><br>
+            <input type="password" class="password_input" placeholder="PASSWORD" required>
+            <br>
+            <div id="warning" class="warn">
+                I LOVE JK
+            </div>
+            <br>
             <button class="login_btn" onclick="window.location.href= 'AddFile.html'">LOGIN</button>
         </div>
     </body>

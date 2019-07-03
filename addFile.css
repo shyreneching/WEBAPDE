@@ -14,9 +14,9 @@ html, body {
     /* width: 30%;
     padding-bottom: -220%; */
     width: 35vw;
-    height: 28vw;
+    height: 30vw;
     background-color: aliceblue;
-    top:15%;
+    top:13%;
     position: relative;
     align-items: center;
     box-shadow: 0 0 15px rgb(30, 125, 136);
@@ -43,7 +43,7 @@ html, body {
     }
 }
 
-@media screen and (min-width: 900px, min-height: 900px) {
+@media screen and (min-width: 900px; min-height: 900px) {
     .add_file_portion {
         top: 35%;
         height: 40vw;
@@ -63,7 +63,7 @@ html, body {
     border-radius: 50px;
     font-family: 'Open Sans';
     letter-spacing: 2px;
-    top: 20px;
+    top: 3vw;
 }
 
 .js .input-file {
@@ -106,9 +106,10 @@ html, body {
 
 a {
     font-family: 'Open Sans';
-    font-size: 3vw;
+    font-size: 2.3vw;
     color: #26B9C8;
     text-decoration: none;
+    padding-bottom: 3vw;
 }
 
 a:hover {

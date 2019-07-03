@@ -21,29 +21,43 @@
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
+   <div class="navbar">
+     <div class="topright">
+       <ul class="navul">
+         <li class="navlink" onclick="window.location.href = 'Home.html'">Home</li>
+         <li class="navlink" onclick="window.location.href = 'Customer Report.html'">Customers</li>
+         <li class="navlink" onclick="window.location.href = 'Burger Sales.html'">Grubs</li>
+       </ul>
+     </div>
+   </div>
+  
   <div class="rightdiv">
     <div id="BTNONE">
-      <button ID="Button1" value="Button">General Product Report</button>
-      <button ID="Button1" value="Button">Time Series Product Report</button>
+      <button ID="Button1" class="genreportbtn" value="Button">General Product Report</button>
+      <button ID="Button1" class="timereportbtn" value="Button">Time Series Product Report</button>
     </div>
   </div>
 
 
   <div id="Prod">
-    <button id="donutchart Button2" type="button" onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab"
-      style="display: none;">Pie Chart</button>
-    <button id="Button2" type="button" onclick="chartDest(); loadBar(document.getElementById('barChart'));"
-      value="New Tab" style="display: none;">Bar Chart</button>
-    <button id="Button2" type="button" value="New Tab" style="display: none;">Monthly</button>
-    <button id="Button2" type="button" value="New Tab" style="display: none;">Weekly</button>
-    <button id="Button2" type="button" onclick="chartDest();" value="New Tab" style="display: none;">Specific
+    <button id="donutchart Button2" class="piechartbtn" type="button"
+      onclick="chartDest(); loaddoughnut('doughnutChart');" value="New Tab" style="display: none;">Pie Chart</button>
+    <button id="Button2" class="barchartbtn" type="button"
+      onclick="chartDest(); loadBar(document.getElementById('barChart'));" value="New Tab" style="display: none;">Bar
+      Chart</button>
+    <button id="Button2" class="monthlybtn" type="button" value="New Tab" style="display: none;">Monthly</button>
+    <button id="Button2" class="weeklybtn" type="button" value="New Tab" style="display: none;">Weekly</button>
+    <button id="Button2" class="spefdatebtn" type="button" onclick="chartDest();" value="New Tab"
+      style="display: none;">Specific
       Date</button>
-    <button id="Button2" type="button" value="New Tab" style="display: none;">Raw Data</button>
+    <button id="Button2" class="rawdatabtn" type="button" value="New Tab" style="display: none;">Raw Data</button>
   </div>
-  <div id="date">
+
+  <div id="date" style="position: relative; z-index: 4">
 
     <div class="cont" style="display: none;">
-      <button id="Button2" type="button" onclick="timesales('timeSales', givepicked())">Show Chart</button>
+      <button id="Button2" class="showchartbtn" type="button" onclick="timesales('timeSales', givepicked())">Show Chart</button>
       <div id="v-cal">
         <div class="vcal-header">
           <button class="vcal-btn" data-calendar-toggle="previous">
@@ -84,16 +98,16 @@
 
   <!-- <button id="destory" type="button" onclick="chartDest()">Destroy</button> -->
 
-  <div class="burgcontainer">
+  <div class="burgcontainer" id="burg">
     <canvas id="doughnutChart" width="500" height="500"></canvas>
   </div>
-  <div class="burgcontainer">
+  <div class="burgcontainer" id="burg">
     <canvas id="barChart" width="500" height="500"></canvas>
   </div>
-  <div class="burgcontainer">
+  <div class="burgcontainer" id="burg">
     <canvas id="lineMonth" width="700" height="600"></canvas>
   </div>
-  <div class="burgcontainer">
+  <div class="burgcontainer" id="burg">
     <canvas id="lineWeek" width="600" height="500"></canvas>
   </div>
   <div class="burgcontainer" id="raw">
@@ -143,6 +157,7 @@
     $("#Prod button:eq(4)").on('click', function () {
       $("#date div:eq(0)").show();
       $("#raw p:eq(0)").hide();
+      // $("#raw p:eq(0)").css("z-index", "-1");
       chartDest();
       if (z == 0) {
         vanillaCalendar.init({
@@ -155,6 +170,8 @@
     $("#Prod button:eq(3)").on('click', function () {
       $("#date div:eq(0)").hide();
       $("#raw p:eq(0)").hide();
+      // document.getElementById('date').style.display = 'none';
+      // document.getElementById('raw').style.display = 'none';
       chartDest();
       loadweek(document.getElementById('lineWeek'));
     });

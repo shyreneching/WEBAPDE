@@ -112,14 +112,24 @@ h3 i {
 
 /* For chart design */
 .burgcontainer {
-  height: 600px;
-  width: 600px;
+  /* height: 600px;
+  width: 600px; */
+  height: 20vw;
+  width: 40vw;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   padding: 5px;
+  /* text-align: center;
+  align-content: center;
+  align-items: center; */
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: center; */
+  top: 40vw;
+  z-index: 2;
 }
 
 #lineMonth {
@@ -132,6 +142,13 @@ h3 i {
   text-align: center;
 }
 
+table {
+  align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  position: relative;
+}
 
 th,
 td,
@@ -198,3 +215,188 @@ a:visited {
   right: 0;
   padding: 5px;
 }
+
+.rightdiv {
+  margin-top: 15vw;
+  align-content: center;
+}
+
+#BTNONE {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* padding: 5vw; */
+}
+
+.genreportbtn {
+  width: 25vw;
+  height: 4vw;
+  border-radius: 30px;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px; */
+  background-color: #26B9C8;
+  color: white;
+  border-color: transparent;
+  font-family: 'Open Sans';
+  font-size: 0.9vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  align-items: center;
+  margin-right: 5vw;
+}
+
+.timereportbtn {
+  width: 25vw;
+  height: 4vw;
+  border-radius: 30px;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px; */
+  background-color: #26B9C8;
+  color: white;
+  border-color: transparent;
+  font-family: 'Open Sans';
+  font-size: 0.9vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  align-items: center;
+  /* margin-right: 5vw; */
+}
+
+.genreportbtn:hover, .timereportbtn:hover {
+  box-shadow: 0 0 4px rgb(156, 156, 156);
+  transition: 350ms;
+}
+
+#Prod {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3.8vw;
+}
+
+.piechartbtn,
+.barchartbtn,
+.monthlybtn,
+.weeklybtn,
+.spefdatebtn,
+.rawdatabtn {
+  width: 15vw;
+  height: 3vw;
+  border-radius: 30px;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px; */
+  background-color: rgb(45, 204, 221);
+  color: white;
+  border-color: transparent;
+  font-family: 'Open Sans';
+  font-size: 0.8vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  align-items: center;
+  margin: 2vw;
+}
+
+.piechartbtn:hover,
+.barchartbtn:hover,
+.monthlybtn:hover,
+.weeklybtn:hover,
+.spefdatebtn:hover,
+.rawdatabtn:hover, 
+.showchartbtn:hover {
+  box-shadow: 0 0 4px rgb(156, 156, 156);
+  transition: 350ms;
+}
+
+.cont {
+  text-align: center;
+}
+
+.showchartbtn {
+  width: 10vw;
+  height: 2.5vw;
+  border-radius: 30px;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px; */
+  background-color: rgb(46, 223, 243);
+  color: white;
+  border-color: transparent;
+  font-family: 'Open Sans';
+  font-size: 0.7vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  align-items: center;
+  margin: 1vw;
+}
+
+html, body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.navbar {
+  width: 100%;
+  height: 100px;
+  background-color: #26B9C8;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  /* display: flex;
+    flex-direction: row; */
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* align-items: center;*/
+  z-index: 6;
+  box-shadow: 0 0 550px rgba(134, 134, 134, 0.274);
+}
+
+.topright {
+  position: relative;
+  top: 28px;
+  left: 440px;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.navul {
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  width: 60%;
+  position: relative;
+}
+
+.navlink {
+  font-family: 'Open Sans';
+  color: white;
+  font-size: 2vw;
+  padding-right: 90px;
+  display: inline-block;
+  text-align: center;
+}
+
+.navlink:hover {
+  color: #BDEDF2;
+  transition: 500ms;
+}
+
+.main-container,
+.nav {
+  top: 10vw;
+  position: absolute;
+}
+
