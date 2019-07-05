@@ -19,17 +19,22 @@
 }
 
 .product {
-  width: 100px;
-  height: 200px;
+  /* width: 100px;
+  height: 300px; */
+  width: 7vw;
+  height: 25vw;
   object-fit: cover;
   object-position: 0% 0;
-
+  transition: 500ms;
 }
 
 .product:hover {
-  width: 200px;
-  height: 200px;
+  /* width: 300px;
+  height: 300px; */
+  width: 25vw;
+  height: 25vw;
   overflow: hidden;
+  transition: 500ms;
 }
 
 #return-to-top {
@@ -128,7 +133,7 @@ h3 i {
   /* display: flex;
   flex-direction: row; */
   /* justify-content: center; */
-  top: 40vw;
+  top: 32vw;
   z-index: 2;
 }
 
@@ -148,6 +153,7 @@ table {
   top: 50%;
   transform: translate(-50%,-50%);
   position: relative;
+  margin-top: 9vw;
 }
 
 th,
@@ -164,6 +170,7 @@ td {
   border-collapse: collapse;
   padding: 3px 5px;
   text-align: center;
+  margin-top: 9vw;
 }
 
 th {
@@ -207,8 +214,8 @@ a:visited {
 }
 
 .sumchart {
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -217,8 +224,15 @@ a:visited {
 }
 
 .rightdiv {
-  margin-top: 15vw;
+  margin-top: 12vw;
   align-content: center;
+}
+
+.title {
+  font-family: 'Open Sans';
+  font-size: 3vw;
+  text-align: center;
+  font-weight: bold;
 }
 
 #BTNONE {
@@ -275,7 +289,7 @@ a:visited {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 3.8vw;
+  padding: 0.6vw;
 }
 
 .piechartbtn,
@@ -397,6 +411,15 @@ html, body {
 .main-container,
 .nav {
   top: 10vw;
+  /* left: 20%; */
   position: absolute;
+  margin: 0px auto;
+}
+
+.entry-title {
+  font-size: 3vw;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  font-weight: bold;
 }
 

@@ -2951,8 +2951,8 @@ body.elementor-page .elementor-widget-menu-anchor {
   position: relative;
   background-color: #eee;
   color: #fff;
-  height: 50px;
-  line-height: 50px;
+  height: 35px;
+  line-height: 35px;
   -webkit-border-radius: 2px;
   border-radius: 2px
 }
