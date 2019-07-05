@@ -1,15 +1,24 @@
 var chart;
 var tabledata;
+// custData MUST be a PERCENTAGE of the sales of customer per product
 var custData;
+// tally version of custData (loaded in loadactualList())
+var rawlist;
+// prod is the name of the products
 var prod;
+//product per has key id, percent
+// percent will be the actual tally of sales per product
 var productper;
+// monthly sales in different products in tally
 var kcmonsales;
 var kpmonsales;
 var kdmonsales;
+// weekly sales in different products in tally
 var kcweksales;
 var kpweksales;
 var kdweksales;
-var rawlist;
+//array of the json file
+var jsonarr;
 
 // General Customer Sales               Krusty Combo
 // Leatherblack Turtle      GSlb        Leatherblack Turtle     KClb
@@ -20,7 +29,7 @@ var rawlist;
 // Gray Whale               GSgw        Gray Whale              KCgw
 // Sealion                  GSsl        Sealion                 KCsl
 //
-// Krabbie Patty                        Krusty Deluxe
+// Krabby Pattie                         Krusty Deluxe
 // Leatherblack Turtle      KPlb        Leatherblack Turtle     KDlb
 // Salmon                   KPsm        Salmon                  KDsm
 // Seahorse                 KPsh        Seahorse                KDsh
@@ -211,7 +220,7 @@ function loadactualList() {
 }
 
 function loadproducts() {
-    prod = ["Krusty Combo", "Krabbie Pattie", "Krusty Deluxe"]
+    prod = ["Krusty Combo", "Krabby Pattie", "Krusty Deluxe"]
 }
 
 function loadproductpercent() {
@@ -219,7 +228,7 @@ function loadproductpercent() {
         id: "Krusty Combo",
         percent: 20
     }, {
-        id: "Krabbie Pattie",
+        id: "Krabby Pattie",
         percent: 30
     }, {
         id: "Krusty Deluxe",
@@ -268,7 +277,7 @@ function loadKCmonthlysales() {
     }]
 }
 
-// function that load the monthly sales of Krabbie Pattie
+// function that load the monthly sales of Krabby Pattie
 function loadKPmonthlysales() {
     kpmonsales = [{
         id: "January",
@@ -376,7 +385,7 @@ function loadKCweeklysales(){
     }]
 }
 
-// function that load the weekly sales of Krabbie Patty
+// function that load the weekly sales of Krabby Pattie
 function loadKPweeklysales(){
     kpweksales = [{
         id: "Sunday",
@@ -426,6 +435,10 @@ function loadKDweeklysales(){
         id: "Saturday",
         val: 72
     }]
+}
+
+function loadJSONarray(json){
+    jsonarr = json;
 }
 
 function loaddoughnut(ctx) {
@@ -529,7 +542,7 @@ function loadline(ctx) {
                 ],
                 borderWidth: 1
             }, {
-                label: 'Krabbie Patty',
+                label: 'Krabby Pattie',
                 data: kptemp,
                 backgroundColor: [
                     'rgba(153, 102, 255, 0.5)'
@@ -589,7 +602,7 @@ function loadweek(ctx) {
                 ],
                 borderWidth: 1
             }, {
-                label: 'Krabbie Patty',
+                label: 'Krabby Pattie',
                 data: kptemp,
                 backgroundColor: [
                     'rgba(153, 102, 255, 0.5)'
@@ -629,7 +642,7 @@ function loadSummary(ctx) {
     chart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Krusty Combo', 'Krabbie Patty', 'Krusty Deluxue'],
+            labels: ['Krusty Combo', 'Krabby Pattie', 'Krusty Deluxue'],
             datasets: [{
                 label: 'Leatherblack Turtle',
                 data: [rawlist[rawlist.findIndex(x => x.id == "KClb")].percent,rawlist[rawlist.findIndex(x => x.id == "KPlb")].percent,rawlist[rawlist.findIndex(x => x.id == "KDlb")].percent],
@@ -830,29 +843,57 @@ function CreateTableFromJSON(data) {
 }
 
 function timesales(ctx, day) {
+    var new_date = new Date(day);
+
+    var filtered = jsonarr.filter(function(item) {
+        return item.datetime.substring(0, 10) == day;
+    })
+    var arr = [
+        {
+            id: "Krusty Combo",
+            count: 0
+        },{
+            id: "Krabby Pattie",
+            count: 0
+        },{
+            id: "Krusty Deluxe",
+            count: 0
+        }
+    ];
+    for(var i = 0; i < filtered.length; i++) {
+      if(filtered[i].burger == "Krusty Combo"){
+          arr[arr.findIndex(x => x.id == "Krusty Combo")].count = arr[arr.findIndex(x => x.id == "Krusty Combo")].count + 1;
+      }else if(filtered[i].burger == "Krabby Pattie"){
+        arr[arr.findIndex(x => x.id =="Krabby Pattie")].count = arr[arr.findIndex(x => x.id =="Krabby Pattie")].count + 1;
+      }else if(filtered[i].burger == "Krusty Deluxe"){
+        arr[arr.findIndex(x => x.id =="Krusty Deluxe")].count = arr[arr.findIndex(x => x.id =="Krusty Deluxe")].count + 1;
+      }
+    }
+
     console.log(day)
     chart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: prod,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Number of Sales on ' + day,
+                data: [arr[0].count, arr[1].count, arr[2].count],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(54, 162, 235, 0.6)'
+
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
+                    'rgba(255, 159, 64, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(54, 162, 235, 1)'
                 ],
                 borderWidth: 1
             }]
