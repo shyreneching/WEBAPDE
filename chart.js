@@ -873,6 +873,7 @@ function timesales(ctx, day) {
     console.log(day)
     chart = new Chart(ctx, {
         type: 'bar',
+        
         data: {
             labels: prod,
             datasets: [{
@@ -909,6 +910,121 @@ function timesales(ctx, day) {
         }
     });
 }
+
+
+function loadCustDate(ctx, day) {
+    jsonarr = [{
+        'datetime': '2019-05-28 08:02:58',
+        'burger': 'Krusty Combo',
+        'species': 'leatherback turtle'
+      }, {
+        'datetime': '2019-05-27 08:04:47',
+        'burger': 'Krabby Pattie',
+        'species': 'salmon'
+      }, {
+        'datetime': '2019-05-27 08:06:37',
+        'burger': 'Krusty Deluxe',
+        'species': 'seahorse'
+      }, {
+        'datetime': '2019-05-27 08:08:35',
+        'burger': 'Krabby Pattie',
+        'species': 'sea lion'
+      }, {
+        'datetime': '2019-05-27 08:10:32',
+        'burger': 'Krabby Pattie',
+        'species': 'sea lion'
+      }, {
+        'datetime': '2019-05-27 08:12:42',
+        'burger': 'Krabby Pattie',
+        'species': 'leatherback turtle'
+      }, {
+        'datetime': '2019-05-27 08:14:48',
+        'burger': 'Krabby Pattie',
+        'species': 'coral'
+      }]
+    var filtered = jsonarr.filter(function(item) {
+        return item.datetime.substring(0, 10) == day;
+    })
+    var arr = [
+        {
+            id: "Leatherblack Turtle",
+            count: 0
+        },{
+            id: "Salmon",
+            count: 0
+        },{
+            id: "Seahorse",
+            count: 0
+        },{
+            id: "Coral",
+            count: 0
+        },{
+            id: "Giant Clam",
+            count: 0
+        },{
+            id: "Gray Whale",
+            count: 0
+        },{
+            id: "Sea Lion",
+            count: 0
+        }
+    ];
+    for(var i = 0; i < filtered.length; i++) {
+        for(var j = 0; j < arr.length; j++){
+            if(filtered[i].species == arr[j].id.toLowerCase()){
+                arr[j].count = arr[j].count + 1;
+            }
+        }
+    }
+    var temp_name = [];
+    var temp_count = [];
+    for(var j = 0; j < arr.length; j++){
+        temp_name.push(arr[j].id);
+        temp_count.push(arr[j].count)
+    }
+
+    chart = new Chart(ctx, {
+        type: 'bar',
+        
+        data: {
+            labels: temp_name,
+            datasets: [{
+                label: 'Number of Customer on ' + day,
+                data: temp_count,
+                backgroundColor: [
+                    'rgba(33, 33, 33, 0.5)',
+                    'rgba(250, 128, 114, 0.5)',
+                    'rgba(240, 173, 78, 0.5)',
+                    'rgba(255, 127, 80, 0.5)',
+                    'rgba(64, 168, 204, 0.5)',
+                    'rgba(128, 128, 128, 0.5)',
+                    'rgba(255, 165, 0, 0.5)'
+
+                ],
+                borderColor: [
+                    'rgba(33, 33, 33, 1)',
+                    'rgba(250, 128, 114, 1)',
+                    'rgba(240, 173, 78, 1)',
+                    'rgba(255, 127, 80, 1)',
+                    'rgba(64, 168, 204, 1)',
+                    'rgba(128, 128, 128, 1)',
+                    'rgba(255, 165, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+}
+
 
 
 function loadchart(ctx) {

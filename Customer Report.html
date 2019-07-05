@@ -22,6 +22,9 @@
 	<!-- data -->
 	<script type='text/javascript' src='grabber.js'></script>
 	<link rel='stylesheet' href='design.css'>
+
+
+	<link href="dist/vanillaCalendar.css" rel="stylesheet">
 </head>
 
 <body class="page-template-default page page-id-1939 wp-custom-logo group-blog has-sidebar-right elementor-default elementor-page elementor-page-1939" style="justify-content: center">
@@ -43,18 +46,19 @@
 		<section class="content-area ">
 			<div id="main" class="container" role="main">
 	<div class="row">
-				<div id="primary" class="col-md-8 mb-xs-24 sidebar-right" style = "margin: 0px auto; width: 100%">
+				<div id="primary" class="col-md-8 mb-xs-24 sidebar-right" style=" width: 100%">
 
 <article id="post-1939" class="post-1939 page type-page status-publish hentry">
 	<header class="entry-header">
 				<h1 class="entry-title" style="text-align: center">Product Report</h1>	</header><!-- .entry-header -->
 				<div class="scroller">
 				<nav>
-						<a href="#5"><img src="Assets/summary.png" alt="Summary Report" class="product" onclick="loadSummary(document.getElementById('barChart'));"></a>
-						<a href="#1"><img src="Assets/general.png" alt="General Sales" class="product"></a>
-						<a href="#2"><img src="Assets/krusty_combo_div.png" alt="Krusty Combo" class="product"></a>
-						<a href="#3"><img src="Assets/krabby_patty_div.png" alt="Krusty Pattie" class="product"></a>
-						<a href="#4"><img src="Assets/krusty_deluxe_div.png" alt="Krusty Deluxue" class="product"></a>
+						<a href="#5" class="scroll-link"><img src="Assets/summary.png" alt="Summary Report" class="product" onclick="loadSummary(document.getElementById('barChart'));"></a>
+						<a href="#6" class="scroll-link"><img src="Assets/Section 1.jpg" alt="Summary Report" class="product"></a>
+						<a href="#1" class="scroll-link"><img src="Assets/general.png" alt="General Sales" class="product"></a>
+						<a href="#2" class="scroll-link"><img src="Assets/krusty_combo_div.png" alt="Krusty Combo" class="product"></a>
+						<a href="#3" class="scroll-link"><img src="Assets/krabby_patty_div.png" alt="Krusty Pattie" class="product"></a>
+						<a href="#4" class="scroll-link"><img src="Assets/krusty_deluxe_div.png" alt="Krusty Deluxue" class="product"></a>
 						
 				</nav>
 			</div>
@@ -64,6 +68,14 @@
 			<img src="Assets/Krusty_Krab_hat.png" width="50" height="70" alt="submit" />
 		</button>
 
+
+
+
+				<div data-elementor-type="post" id="flexer" data-elementor-id="1939" class="elementor elementor-1939 elementor-bc-flex-widget" data-elementor-settings="[]">
+			
+				<div class="elementor-section-wrap">
+							
+		
 
 
 
@@ -102,11 +114,89 @@
 			<canvas id="barChart" width="500" height="500"></canvas>
 		</div>
 	</div>
-				<div data-elementor-type="post" id="flexer" data-elementor-id="1939" class="elementor elementor-1939 elementor-bc-flex-widget" data-elementor-settings="[]">
-			
-				<div class="elementor-section-wrap">
-							
+
+
+<!-- Divider -->
+		<section class="elementor-element elementor-element-7429904 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7429904" data-element_type="section">
+				<div class="elementor-container elementor-column-gap-default">
+		<div class="elementor-row">
+		<div class="elementor-element elementor-element-fd23637 elementor-column elementor-col-100 elementor-top-column" data-id="fd23637" data-element_type="column">
+	<div class="elementor-column-wrap  elementor-element-populated">
+			<div class="elementor-widget-wrap">
+		<div class="elementor-element elementor-element-087b2b0 elementor-widget elementor-widget-divider" data-id="087b2b0" data-element_type="widget" data-widget_type="divider.default">
+		<div class="elementor-widget-container">
+			<div class="elementor-divider">
+	<span class="elementor-divider-separator"></span>
+</div>
+		</div>
+		</div>
+				</div>
+	</div>
+</div>
+				</div>
+	</div>
+</section>
+
+
+
+
+	<div class="Time Report" id="6">
+			<h2 class="elementor-heading-title elementor-size-default" id="sumrept">Specific Date Report</h2>
 		
+			
+	<div class="timecust" >
+    <div class="cont">
+      <button id="Button2" class="showchartbtn" type="button" onclick="loadCustDate('timeChart', givepicked())">Show
+        Chart</button>
+      <div id="v-cal" class="move">
+        <div class="vcal-header">
+          <button class="vcal-btn" data-calendar-toggle="previous">
+            <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
+            </svg>
+          </button>
+          <div class="vcal-header__label" data-calendar-label="month">
+            March 2017
+          </div>
+
+          <button class="vcal-btn" data-calendar-toggle="next">
+            <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="vcal-week">
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+          <span>Sun</span>
+        </div>
+		<div class="vcal-body" data-calendar-area="month"></div>
+		
+      </div>
+
+      <p class="demo-picked">
+        Date picked:
+        <span data-calendar-label="picked"></span>
+      </p>
+	  <canvas id="timeChart" width="500" height="500" style="position: absolute;"></canvas>
+      
+    </div>
+  
+    </div>
+	
+	</div>
+	</div>
+
+
+
+
+
+
+
 		<!-- Divider -->
 		<section class="elementor-element elementor-element-7429904 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7429904" data-element_type="section">
 				<div class="elementor-container elementor-column-gap-default">
@@ -1040,15 +1130,10 @@
 </div>
 </div><!-- #page -->
 
-
+<script src="dist/vanillaCalendar.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			jQuery( document ).ready( function( $ ) {
-				
-				if ( $( window ).width() >= 767 ) {
-					$( '.navbar-nav > li.menu-item > a' ).click( function() {
-						window.location = $( this ).attr( 'href' );
-					} );
-				}
+			
 				loadactualList()
 				var list = getcustData();
 				//loading data to customer reports
@@ -1172,18 +1257,19 @@
 			
 			
 			} );
-
+			
 		window.addEventListener('load', function () {
 			loadSummary(document.getElementById('barChart'));
+			vanillaCalendar.init({
+				disablePastDays: false
+			});
 		})
 
 		</script>
-			<div style="display:none">
-	</div>
+			
 
 
-
-
+	
 <script type='text/javascript'>
 /* <![CDATA[ */
 var ShapelyAdminObject = {"sticky_header":"1"};
@@ -1205,6 +1291,7 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 		function scrollFunction() {
 		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 			document.getElementById("myBtn").style.display = "block";
+			
 		  } else {
 			document.getElementById("myBtn").style.display = "none";
 		  }

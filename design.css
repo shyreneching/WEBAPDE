@@ -151,7 +151,7 @@ table {
   align: center;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   position: relative;
   margin-top: 9vw;
 }
@@ -279,7 +279,8 @@ a:visited {
   /* margin-right: 5vw; */
 }
 
-.genreportbtn:hover, .timereportbtn:hover {
+.genreportbtn:hover,
+.timereportbtn:hover {
   box-shadow: 0 0 4px rgb(156, 156, 156);
   transition: 350ms;
 }
@@ -320,7 +321,7 @@ a:visited {
 .monthlybtn:hover,
 .weeklybtn:hover,
 .spefdatebtn:hover,
-.rawdatabtn:hover, 
+.rawdatabtn:hover,
 .showchartbtn:hover {
   box-shadow: 0 0 4px rgb(156, 156, 156);
   transition: 350ms;
@@ -348,7 +349,8 @@ a:visited {
   margin: 1vw;
 }
 
-html, body {
+html,
+body {
   padding: 0px;
   margin: 0px;
   height: 100%;
@@ -411,9 +413,10 @@ html, body {
 .main-container,
 .nav {
   top: 10vw;
+  /* margin-top: 100px; */
   /* left: 20%; */
-  position: absolute;
-  margin: 0px auto;
+  position: relative;
+  /* margin: 0px auto; */
 }
 
 .entry-title {
@@ -423,3 +426,16 @@ html, body {
   font-weight: bold;
 }
 
+.move {
+  display: inline-block;
+  align-content: left;
+
+}
+
+#timeChart{
+  display: inline-block;
+  position: relative;
+  margin-top: -350px;
+  margin-left: 450px;
+  height: 500px;
+}
