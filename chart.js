@@ -21,7 +21,7 @@ var kdweksales;
 var jsonarr;
 
 // General Customer Sales               Krusty Combo
-// Leatherblack Turtle      GSlb        Leatherblack Turtle     KClb
+// Leatherback Turtle       GSlb        Leatherback Turtle      KClb
 // Salmon                   GSsm        Salmon                  KCsm
 // Seahorse                 GSsh        Seahorse                KCsh
 // Coral                    GScr        Coral                   KCcr
@@ -30,7 +30,7 @@ var jsonarr;
 // Sealion                  GSsl        Sealion                 KCsl
 //
 // Krabby Pattie                         Krusty Deluxe
-// Leatherblack Turtle      KPlb        Leatherblack Turtle     KDlb
+// Leatherback Turtle       KPlb        Leatherback Turtle      KDlb
 // Salmon                   KPsm        Salmon                  KDsm
 // Seahorse                 KPsh        Seahorse                KDsh
 // Coral                    KPcr        Coral                   KDcr
@@ -644,7 +644,7 @@ function loadSummary(ctx) {
         data: {
             labels: ['Krusty Combo', 'Krabby Pattie', 'Krusty Deluxue'],
             datasets: [{
-                label: 'Leatherblack Turtle',
+                label: 'Leatherback Turtle',
                 data: [rawlist[rawlist.findIndex(x => x.id == "KClb")].percent,rawlist[rawlist.findIndex(x => x.id == "KPlb")].percent,rawlist[rawlist.findIndex(x => x.id == "KDlb")].percent],
                 backgroundColor: [
                     'rgba(33, 33, 33, 0.5)',
@@ -947,7 +947,7 @@ function loadCustDate(ctx, day) {
     })
     var arr = [
         {
-            id: "Leatherblack Turtle",
+            id: "Leatherback Turtle",
             count: 0
         },{
             id: "Salmon",
