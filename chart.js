@@ -27,7 +27,7 @@ var jsonarr;
 // Coral                    GScr        Coral                   KCcr
 // Giant Clam               GSgc        Giant Clam              KCgc
 // Gray Whale               GSgw        Gray Whale              KCgw
-// Sealion                  GSsl        Sealion                 KCsl
+// Sea Lion                 GSsl        Sea Lion                KCsl
 //
 // Krabby Pattie                         Krusty Deluxe
 // Leatherback Turtle       KPlb        Leatherback Turtle      KDlb
@@ -36,184 +36,258 @@ var jsonarr;
 // Coral                    KPcr        Coral                   KDcr
 // Giant Clam               KPgc        Giant Clam              KDgc
 // Gray Whale               KPgw        Gray Whale              KDgw
-// Sealion                  KPsl        Sealion                 KDsl
+// Sea Lion                 KPsl        Sea Lion                KDsl
 function getcustData() {
+    
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
     custData = [{
         id: "GSlb",
-        percent: 20,
+        percent: (data.species_sales["leatherback turtle"] / data.sales.length * 100).toFixed(2),
     }, {
         id: "GSsm",
-        percent: 10,
+        percent: (data.species_sales["salmon"] / data.sales.length * 100).toFixed(2),
     }, {
         id: "GSsh",
-        percent: 5,
+        percent: (data.species_sales["seahorse"] / data.sales.length * 100).toFixed(2),
     }, {
         id: "GScr",
-        percent: 20,
+        percent: (data.species_sales["coral"] / data.sales.length * 100).toFixed(2),
     }, {
         id: "GSgc",
-        percent: 10,
+        percent: (data.species_sales["giant clam"] / data.sales.length * 100).toFixed(2),
     }, {
         id: "GSgw",
-        percent: 30,
+        percent: (data.species_sales["gray whale"] / data.sales.length * 100).toFixed(2),
     }, {
         id: "GSsl",
-        percent: 5,
+        percent: (data.species_sales["sea lion"] / data.sales.length * 100).toFixed(2),
     }, {
         id: "KClb",
-        percent: 10,
+        percent: (data.burger_by_species["Krusty Combo"]["leatherback turtle"] / data.burger_sales["Krusty Combo"] * 100).toFixed(2),
     }, {
         id: "KCsm",
-        percent: 20,
+        percent: (data.burger_by_species["Krusty Combo"]["salmon"] / data.burger_sales["Krusty Combo"] * 100).toFixed(2),
     }, {
         id: "KCsh",
-        percent: 20,
+        percent: (data.burger_by_species["Krusty Combo"]["seahorse"] / data.burger_sales["Krusty Combo"] * 100).toFixed(2),
     }, {
         id: "KCcr",
-        percent: 30,
+        percent: (data.burger_by_species["Krusty Combo"]["coral"] / data.burger_sales["Krusty Combo"] * 100).toFixed(2),
     }, {
         id: "KCgc",
-        percent: 10,
+        percent: (data.burger_by_species["Krusty Combo"]["giant clam"] / data.burger_sales["Krusty Combo"] * 100).toFixed(2),
     }, {
         id: "KCgw",
-        percent: 5,
+        percent: (data.burger_by_species["Krusty Combo"]["gray whale"] / data.burger_sales["Krusty Combo"] * 100).toFixed(2),
     }, {
         id: "KCsl",
-        percent: 5,
+        percent: (data.burger_by_species["Krusty Combo"]["sea lion"] / data.burger_sales["Krusty Combo"] * 100).toFixed(2),
     }, {
         id: "KPlb",
-        percent: 20,
+        percent: (data.burger_by_species["Krabby Pattie"]["leatherback turtle"] / data.burger_sales["Krabby Pattie"] * 100).toFixed(2),
     }, {
         id: "KPsm",
-        percent: 10,
+        percent: (data.burger_by_species["Krabby Pattie"]["salmon"] / data.burger_sales["Krabby Pattie"] * 100).toFixed(2),
     }, {
         id: "KPsh",
-        percent: 5,
+        percent: (data.burger_by_species["Krabby Pattie"]["seahorse"] / data.burger_sales["Krabby Pattie"] * 100).toFixed(2),
     }, {
         id: "KPcr",
-        percent: 20,
+        percent: (data.burger_by_species["Krabby Pattie"]["coral"] / data.burger_sales["Krabby Pattie"] * 100).toFixed(2),
     }, {
         id: "KPgc",
-        percent: 10,
+        percent: (data.burger_by_species["Krabby Pattie"]["giant clam"] / data.burger_sales["Krabby Pattie"] * 100).toFixed(2),
     }, {
         id: "KPgw",
-        percent: 30,
+        percent: (data.burger_by_species["Krabby Pattie"]["gray whale"] / data.burger_sales["Krabby Pattie"] * 100).toFixed(2),
     }, {
         id: "KPsl",
-        percent: 5,
+        percent: (data.burger_by_species["Krabby Pattie"]["sea lion"] / data.burger_sales["Krabby Pattie"] * 100).toFixed(2),
     }, {
         id: "KDlb",
-        percent: 5,
+        percent: (data.burger_by_species["Krusty Deluxe"]["leatherback turtle"] / data.burger_sales["Krusty Deluxe"] * 100).toFixed(2),
     }, {
         id: "KDsm",
-        percent: 10,
+        percent: (data.burger_by_species["Krusty Deluxe"]["salmon"] / data.burger_sales["Krusty Deluxe"] * 100).toFixed(2),
     }, {
         id: "KDsh",
-        percent: 20,
+        percent: (data.burger_by_species["Krusty Deluxe"]["seahorse"] / data.burger_sales["Krusty Deluxe"] * 100).toFixed(2),
     }, {
         id: "KDcr",
-        percent: 10,
+        percent: (data.burger_by_species["Krusty Deluxe"]["coral"] / data.burger_sales["Krusty Deluxe"] * 100).toFixed(2),
     }, {
         id: "KDgc",
-        percent: 30,
+        percent: (data.burger_by_species["Krusty Deluxe"]["giant clam"] / data.burger_sales["Krusty Deluxe"] * 100).toFixed(2),
     }, {
         id: "KDgw",
-        percent: 20,
+        percent: (data.burger_by_species["Krusty Deluxe"]["gray whale"] / data.burger_sales["Krusty Deluxe"] * 100).toFixed(2),
     }, {
         id: "KDsl",
-        percent: 5,
+        percent: (data.burger_by_species["Krusty Deluxe"]["sea lion"] / data.burger_sales["Krusty Deluxe"] * 100).toFixed(2),
     }]
+
+
 
     return custData;
 
 }
 
 function loadactualList() {
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
     rawlist = [{
         id: "GSlb",
-        percent: 20,
+        percent: data.species_sales["leatherback turtle"],
     }, {
         id: "GSsm",
-        percent: 10,
+        percent: data.species_sales["salmon"],
     }, {
         id: "GSsh",
-        percent: 5,
+        percent: data.species_sales["seahorse"],
     }, {
         id: "GScr",
-        percent: 20,
+        percent: data.species_sales["coral"],
     }, {
         id: "GSgc",
-        percent: 10,
+        percent: data.species_sales["giant clam"],
     }, {
         id: "GSgw",
-        percent: 30,
+        percent: data.species_sales["gray whale"],
     }, {
         id: "GSsl",
-        percent: 5,
+        percent: data.species_sales["sea lion"],
     }, {
         id: "KClb",
-        percent: 10,
+        percent: data.burger_by_species["Krusty Combo"]["leatherback turtle"],
     }, {
         id: "KCsm",
-        percent: 20,
+        percent: data.burger_by_species["Krusty Combo"]["salmon"],
     }, {
         id: "KCsh",
-        percent: 20,
+        percent: data.burger_by_species["Krusty Combo"]["seahorse"],
     }, {
         id: "KCcr",
-        percent: 30,
+        percent: data.burger_by_species["Krusty Combo"]["coral"],
     }, {
         id: "KCgc",
-        percent: 10,
+        percent: data.burger_by_species["Krusty Combo"]["giant clam"],
     }, {
         id: "KCgw",
-        percent: 5,
+        percent: data.burger_by_species["Krusty Combo"]["gray whale"],
     }, {
         id: "KCsl",
-        percent: 5,
+        percent: data.burger_by_species["Krusty Combo"]["sea lion"],
     }, {
         id: "KPlb",
-        percent: 20,
+        percent: data.burger_by_species["Krabby Pattie"]["leatherback turtle"],
     }, {
         id: "KPsm",
-        percent: 10,
+        percent: data.burger_by_species["Krabby Pattie"]["salmon"],
     }, {
         id: "KPsh",
-        percent: 5,
+        percent: data.burger_by_species["Krabby Pattie"]["seahorse"],
     }, {
         id: "KPcr",
-        percent: 20,
+        percent: data.burger_by_species["Krabby Pattie"]["coral"],
     }, {
         id: "KPgc",
-        percent: 10,
+        percent: data.burger_by_species["Krabby Pattie"]["giant clam"],
     }, {
         id: "KPgw",
-        percent: 30,
+        percent: data.burger_by_species["Krabby Pattie"]["gray whale"],
     }, {
         id: "KPsl",
-        percent: 5,
+        percent: data.burger_by_species["Krabby Pattie"]["sea lion"],
     }, {
         id: "KDlb",
-        percent: 5,
+        percent: data.burger_by_species["Krusty Deluxe"]["leatherback turtle"],
     }, {
         id: "KDsm",
-        percent: 10,
+        percent: data.burger_by_species["Krusty Deluxe"]["salmon"],
     }, {
         id: "KDsh",
-        percent: 20,
+        percent: data.burger_by_species["Krusty Deluxe"]["seahorse"],
     }, {
         id: "KDcr",
-        percent: 10,
+        percent: data.burger_by_species["Krusty Deluxe"]["coral"],
     }, {
         id: "KDgc",
-        percent: 30,
+        percent: data.burger_by_species["Krusty Deluxe"]["giant clam"],
     }, {
         id: "KDgw",
-        percent: 20,
+        percent: data.burger_by_species["Krusty Deluxe"]["gray whale"],
     }, {
         id: "KDsl",
-        percent: 5,
+        percent: data.burger_by_species["Krusty Deluxe"]["sea lion"],
     }]
+
+    // for(var i = 0; i < data.length; i++){
+    //     if (data[i].species == "leatherback turtle") {
+    //         custData[0].percent = custData[0].percent + 1;
+    //         if(data[i].burger == "Krusty Combo")
+    //             custData[7].percent = custData[7].percent + 1;
+    //         else if(data[i].burger == "Krabby Pattie")
+    //             custData[14].percent = custData[14].percent + 1;
+    //         else if(data[i].burger == "Krusty Deluxe")
+    //             custData[21].percent = custData[21].percent + 1;
+    //     }
+    //     if (data[i].species == "salmon") {
+    //         custData[1].percent = custData[1].percent + 1;
+    //         if(data[i].burger == "Krusty Combo")
+    //             custData[8].percent = custData[8].percent + 1;
+    //         else if(data[i].burger == "Krabby Pattie")
+    //             custData[15].percent = custData[15].percent + 1;
+    //         else if(data[i].burger == "Krusty Deluxe")
+    //             custData[22].percent = custData[22].percent + 1;
+    //     }
+    //     if (data[i].species == "seahorse") {
+    //         custData[2].percent = custData[2].percent + 1;
+    //         if(data[i].burger == "Krusty Combo")
+    //             custData[9].percent = custData[9].percent + 1;
+    //         else if(data[i].burger == "Krabby Pattie")
+    //             custData[16].percent = custData[16].percent + 1;
+    //         else if(data[i].burger == "Krusty Deluxe")
+    //             custData[23].percent = custData[23].percent + 1;
+    //     }
+    //     if (data[i].species == "coral") {
+    //         custData[3].percent = custData[3].percent + 1;
+    //         if(data[i].burger == "Krusty Combo")
+    //             custData[10].percent = custData[10].percent + 1;
+    //         else if(data[i].burger == "Krabby Pattie")
+    //             custData[17].percent = custData[17].percent + 1;
+    //         else if(data[i].burger == "Krusty Deluxe")
+    //             custData[24].percent = custData[24].percent + 1;
+    //     }
+    //     if (data[i].species == "giant clam") {
+    //         custData[4].percent = custData[4].percent + 1;
+    //         if(data[i].burger == "Krusty Combo")
+    //             custData[11].percent = custData[11].percent + 1;
+    //         else if(data[i].burger == "Krabby Pattie")
+    //             custData[18].percent = custData[18].percent + 1;
+    //         else if(data[i].burger == "Krusty Deluxe")
+    //             custData[25].percent = custData[25].percent + 1;
+    //     }
+    //     if (data[i].species == "gray whale") {
+    //         custData[5].percent = custData[5].percent + 1;
+    //         if(data[i].burger == "Krusty Combo")
+    //             custData[12].percent = custData[12].percent + 1;
+    //         else if(data[i].burger == "Krabby Pattie")
+    //             custData[19].percent = custData[19].percent + 1;
+    //         else if(data[i].burger == "Krusty Deluxe")
+    //             custData[26].percent = custData[26].percent + 1;
+    //     }
+    //     if (data[i].species == "sea lion") {
+    //         custData[6].percent = custData[6].percent + 1;
+    //         if(data[i].burger == "Krusty Combo")
+    //             custData[13].percent = custData[13].percent + 1;
+    //         else if(data[i].burger == "Krabby Pattie")
+    //             custData[20].percent = custData[20].percent + 1;
+    //         else if(data[i].burger == "Krusty Deluxe")
+    //             custData[27].percent = custData[27].percent + 1;
+    //     }
+    // }
 
     return custData;
 
@@ -224,232 +298,305 @@ function loadproducts() {
 }
 
 function loadproductpercent() {
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+    
     productper = [{
         id: "Krusty Combo",
-        percent: 20
+        percent: data.burger_sales["Krusty Combo"]
     }, {
         id: "Krabby Pattie",
-        percent: 30
+        percent: data.burger_sales["Krabby Pattie"]
     }, {
         id: "Krusty Deluxe",
-        percent: 50
+        percent: data.burger_sales["Krusty Deluxe"]
     }]
 }
 
 // function that load the monthly sales of Krusty Combo
 function loadKCmonthlysales() {
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
     kcmonsales = [{
         id: "January",
-        val: 95
+        val: 0
     }, {
         id: "February",
-        val: 21
+        val: 0
     }, {
         id: "March",
-        val: 45
+        val: 0
     }, {
         id: "April",
-        val: 72
+        val: 0
     }, {
         id: "May",
-        val: 25
+        val: 0
     }, {
         id: "June",
-        val: 45
+        val: 0
     }, {
         id: "July",
-        val: 28
+        val: 0
     }, {
         id: "August",
-        val: 78
+        val: 0
     }, {
         id: "September",
-        val: 10
+        val: 0
     }, {
         id: "October",
-        val: 5
+        val: 0
     }, {
         id: "November",
-        val: 17
+        val: 0
     }, {
         id: "December",
-        val: 22
+        val: 0
     }]
+
+    for(var i = 0; i < data.sales.length; i++) {
+        if(data.sales[i].burger == "Krusty Combo") {
+            var x = new Date(data.sales[i].datetime)
+            kcmonsales[x.getMonth()].val++;
+        }
+    }
+
 }
 
 // function that load the monthly sales of Krabby Pattie
 function loadKPmonthlysales() {
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
     kpmonsales = [{
         id: "January",
-        val: 25
+        val: 0
     }, {
         id: "February",
-        val: 24
+        val: 0
     }, {
         id: "March",
-        val: 4
+        val: 0
     }, {
         id: "April",
-        val: 22
+        val: 0
     }, {
         id: "May",
-        val: 28
+        val: 0
     }, {
         id: "June",
-        val: 21
+        val: 0
     }, {
         id: "July",
-        val: 32
+        val: 0
     }, {
         id: "August",
-        val: 58
+        val: 0
     }, {
         id: "September",
-        val: 17
+        val: 0
     }, {
         id: "October",
-        val: 47
+        val: 0
     }, {
         id: "November",
-        val: 58
+        val: 0
     }, {
         id: "December",
-        val: 37
+        val: 0
     }]
+
+    for(var i = 0; i < data.sales.length; i++) {
+        if(data.sales[i].burger == "Krabby Pattie") {
+            var x = new Date(data.sales[i].datetime)
+            kpmonsales[x.getMonth()].val++;
+        }
+    }
+
 }
 
 // function that load the monthly sales of Krusty Deluxe
 function loadKDmonthlysales() {
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
     kdmonsales = [{
         id: "January",
-        val: 17
+        val: 0
     }, {
         id: "February",
-        val: 25
+        val: 0
     }, {
         id: "March",
-        val: 45
+        val: 0
     }, {
         id: "April",
-        val: 82
+        val: 0
     }, {
         id: "May",
-        val: 35
+        val: 0
     }, {
         id: "June",
-        val: 56
+        val: 0
     }, {
         id: "July",
-        val: 68
+        val: 0
     }, {
         id: "August",
-        val: 2
+        val: 0
     }, {
         id: "September",
-        val: 38
+        val: 0
     }, {
         id: "October",
-        val: 78
+        val: 0
     }, {
         id: "November",
-        val: 52
+        val: 0
     }, {
         id: "December",
-        val: 45
+        val: 0
     }]
+
+    for(var i = 0; i < data.sales.length; i++) {
+        if(data.sales[i].burger == "Krusty Deluxe") {
+            var x = new Date(data.sales[i].datetime)
+            kdmonsales[x.getMonth()].val++;
+        }
+    }
 }
 
 // function that load the weekly sales of Krusty Combo
 function loadKCweeklysales(){
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
     kcweksales = [{
         id: "Sunday",
-        val: 17
+        val: 0
     }, {
         id: "Monday",
-        val: 25
+        val: 0
     }, {
         id: "Tuesday",
-        val: 45
+        val: 0
     }, {
         id: "Wednesday",
-        val: 82
+        val: 0
     }, {
         id: "Thursday",
-        val: 35
+        val: 0
     }, {
         id: "Friday",
-        val: 56
+        val: 0
     }, {
         id: "Saturday",
-        val: 56
+        val: 0
     }]
+
+    for(var i = 0; i < data.sales.length; i++) {
+        if(data.sales[i].burger == "Krusty Combo") {
+            var x = new Date(data.sales[i].datetime)
+            kcweksales[x.getDay()].val++;
+        }
+    }
 }
 
 // function that load the weekly sales of Krabby Pattie
 function loadKPweeklysales(){
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
     kpweksales = [{
         id: "Sunday",
-        val: 24
+        val: 0
     }, {
         id: "Monday",
-        val: 75
+        val: 0
     }, {
         id: "Tuesday",
-        val: 58
+        val: 0
     }, {
         id: "Wednesday",
-        val: 10
+        val: 0
     }, {
         id: "Thursday",
-        val: 35
+        val: 0
     }, {
         id: "Friday",
-        val: 85
+        val: 0
     }, {
         id: "Saturday",
-        val: 21
+        val: 0
     }]
+
+    for(var i = 0; i < data.sales.length; i++) {
+        if(data.sales[i].burger == "Krabby Pattie") {
+            var x = new Date(data.sales[i].datetime)
+            kpweksales[x.getDay()].val++;
+        }
+    }
 }
 
 // function that load the weekly sales of Krusty Deluxe
 function loadKDweeklysales(){
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
     kdweksales = [{
         id: "Sunday",
-        val: 47
+        val: 0
     }, {
         id: "Monday",
-        val: 58
+        val: 0
     }, {
         id: "Tuesday",
-        val: 69
+        val: 0
     }, {
         id: "Wednesday",
-        val: 12
+        val: 0
     }, {
         id: "Thursday",
-        val: 78
+        val: 0
     }, {
         id: "Friday",
-        val: 28
+        val: 0
     }, {
         id: "Saturday",
-        val: 72
+        val: 0
     }]
+
+    for(var i = 0; i < data.sales.length; i++) {
+        if(data.sales[i].burger == "Krusty Deluxe") {
+            var x = new Date(data.sales[i].datetime)
+            kdweksales[x.getDay()].val++;
+        }
+    }
 }
 
-function loadJSONarray(json){
-    jsonarr = json;
+function loadJSONarray(){
+
+    var data = JSON.parse(window.localStorage.getItem("data"));
+
+    jsonarr = data.sales;
 }
 
 function loaddoughnut(ctx) {
     
+    var total = productper[0].percent + productper[1].percent + productper[2].percent;
+    var kc = ((productper[0].percent/ total) * 100).toFixed(2);
+    var kp = ((productper[1].percent/ total) * 100).toFixed(2);
+    var kd = ((productper[2].percent/ total) * 100).toFixed(2);
+    console.log(kc);
     chart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: [productper[0].id, productper[1].id, productper[2].id],
             datasets: [{
                 label: 'Number of Sales per Product',
-                data: [productper[0].percent, productper[1].percent, productper[2].percent],
+                data: [kc, kp, kd],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',
                     'rgba(255, 206, 86, 0.6)',
@@ -767,8 +914,9 @@ function chartDest() {
 
 }
 
-function CreateTableFromJSON(data) {
-    tabledata = data;
+function CreateTableFromJSON(x) {
+    loadJSONarray();
+    tabledata = jsonarr;
     // EXTRACT VALUE FOR HTML HEADER. 
     // var col = [];
     // for (var i = 0; i < tabledata.length; i++) {
@@ -844,7 +992,7 @@ function CreateTableFromJSON(data) {
 
 function timesales(ctx, day) {
     var new_date = new Date(day);
-
+    loadJSONarray();
     var filtered = jsonarr.filter(function(item) {
         return item.datetime.substring(0, 10) == day;
     })
@@ -913,35 +1061,7 @@ function timesales(ctx, day) {
 
 
 function loadCustDate(ctx, day) {
-    jsonarr = [{
-        'datetime': '2019-05-28 08:02:58',
-        'burger': 'Krusty Combo',
-        'species': 'leatherback turtle'
-      }, {
-        'datetime': '2019-05-27 08:04:47',
-        'burger': 'Krabby Pattie',
-        'species': 'salmon'
-      }, {
-        'datetime': '2019-05-27 08:06:37',
-        'burger': 'Krusty Deluxe',
-        'species': 'seahorse'
-      }, {
-        'datetime': '2019-05-27 08:08:35',
-        'burger': 'Krabby Pattie',
-        'species': 'sea lion'
-      }, {
-        'datetime': '2019-05-27 08:10:32',
-        'burger': 'Krabby Pattie',
-        'species': 'sea lion'
-      }, {
-        'datetime': '2019-05-27 08:12:42',
-        'burger': 'Krabby Pattie',
-        'species': 'leatherback turtle'
-      }, {
-        'datetime': '2019-05-27 08:14:48',
-        'burger': 'Krabby Pattie',
-        'species': 'coral'
-      }]
+    loadJSONarray();
     var filtered = jsonarr.filter(function(item) {
         return item.datetime.substring(0, 10) == day;
     })

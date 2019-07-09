@@ -147,7 +147,7 @@
 			
 	<div class="timecust" >
     <div class="cont">
-      <button id="Button2" class="showchartbtn" type="button" onclick="loadCustDate('timeChart', givepicked())">Show
+      <button id="Button2" class="showchartbtn" type="button" onclick="chartDest(); loadCustDate('timeChart', givepicked())">Show
         Chart</button>
       <div id="v-cal" class="move">
         <div class="vcal-header">
@@ -1261,6 +1261,7 @@
 			
 		window.addEventListener('load', function () {
 			loadSummary(document.getElementById('barChart'));
+			loadCustDate(document.getElementById('timeChart'));
 			vanillaCalendar.init({
 				disablePastDays: false
 			});

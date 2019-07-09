@@ -134,7 +134,7 @@ h3 i {
   flex-direction: row; */
   /* justify-content: center; */
   top: 32vw;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 #lineMonth {
@@ -150,10 +150,8 @@ h3 i {
 table {
   align: center;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   position: relative;
-  margin-top: 9vw;
 }
 
 th,
@@ -170,7 +168,8 @@ td {
   border-collapse: collapse;
   padding: 3px 5px;
   text-align: center;
-  margin-top: 9vw;
+  /* margin-top: 0%;
+  top: 2vw; */
 }
 
 th {
@@ -438,4 +437,8 @@ body {
   margin-top: -350px;
   margin-left: 450px;
   height: 500px;
+}
+
+#raw{
+  height:30em;  
 }
