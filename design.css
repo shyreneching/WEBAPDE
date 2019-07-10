@@ -372,7 +372,7 @@ body {
   /* float: left; */
   /* justify-content: center; */
   /* align-items: center;*/
-  z-index: 1;
+  z-index: 8;
   box-shadow: 0 6px 10px 2px rgba(134, 134, 134, 0.274);
 }
 
