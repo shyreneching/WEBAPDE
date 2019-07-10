@@ -1,26 +1,57 @@
 var obj;
 
 $(document).ready(function () {
-    $("#my-file").change(function(e) {
-        $.get(e.target.files[0].name, function(data) {
-            if($.parseJSON(data) != undefined) {
-                obj = ($.parseJSON(data));
-                window.localStorage.setItem("data", JSON.stringify(obj));
-                console.log(JSON.parse(window.localStorage.getItem("data")));
+    $("#conf").hide();
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        // Great success! All the File APIs are supported.
+        $("#my-file").change(function(e) {
+            if(e.target.files[0]) {
+                $("#conf").show();
+                var file = e.target.files[0];
+                var reader = new FileReader();
+                reader.onload = (function() {
+                    var data = reader.result;
+                    if($.parseJSON(data) != undefined) {
+                        // $("conf").show();
+                        obj = ($.parseJSON(data));
+                        window.localStorage.setItem("data", JSON.stringify(obj));
+                        console.log("1");
+                        console.log(JSON.parse(window.localStorage.getItem("data")));
+                        for (var i = 1; i < e.target.files.length; i++) {
+                            var filename = e.target.files[i];
+                            var reader1 = new FileReader();
+                            reader1.onload = (function() {
+                                var data = reader1.result;
+                                upload($.parseJSON(data))
+                            })
+                            reader1.readAsText(filename);
+                            // $.get(filename, function(data) {
+                            //     upload($.parseJSON(data))
+                            // })
+                        }
+                    }
+                    // else {
+                    //     $("#conf").hide();
+                    // }
+                })
+                reader.readAsText(file);
+                // $.get(e.target.files[0].name, function(data) {
+                    
+                // })
             }
-        })
-        for (var i = 1; i < e.target.files.length; i++) {
-            var filename = e.target.files[i].name;
-            $.get(filename, function(data) {
-                upload($.parseJSON(data))
-            })
-        }
-
-    });
+            else {
+                $("#conf").hide();
+            }
+        });
+    } else {
+        alert('The File APIs are not fully supported in this browser. Please use a different browser.');
+        window.location.href= 'Login.html';
+    }
 });
 
 function upload(file) {
     if(file != undefined) {
+        console.log("here");
         var alldata = obj.sales.concat(file.sales);
         obj.sales = alldata;
 
@@ -61,6 +92,7 @@ function upload(file) {
         obj.burger_by_species["Krusty Deluxe"]["sea lion"] = obj.burger_by_species["Krusty Deluxe"]["sea lion"] + file.burger_by_species["Krusty Deluxe"]["sea lion"];
 
         window.localStorage.setItem("data", JSON.stringify(obj));
+        console.log("2");
         console.log(JSON.parse(window.localStorage.getItem("data")));
     }
 }
