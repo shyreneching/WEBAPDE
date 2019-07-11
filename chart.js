@@ -1051,7 +1051,8 @@ function timesales(ctx, day) {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        max: 500
                     }
                 }]
             }
@@ -1102,7 +1103,7 @@ function loadCustDate(ctx, day) {
         temp_name.push(arr[j].id);
         temp_count.push(arr[j].count)
     }
-
+    
     chart = new Chart(ctx, {
         type: 'bar',
         
@@ -1137,7 +1138,8 @@ function loadCustDate(ctx, day) {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        max: 200
                     }
                 }]
             }
