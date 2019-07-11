@@ -6,6 +6,11 @@ html, body {
     background-color: #26B9C8;
 }
 
+@font-face {
+    font-family: 'Open Sans';
+    src: url("fonts/OpenSans-Regular.ttf");
+}
+
 .login_portion {
     margin: 0px auto;
     height: 100%;

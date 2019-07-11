@@ -5,6 +5,11 @@ html, body {
     width: 100%;
 }
 
+@font-face {
+    font-family: 'Open Sans';
+    src: url("fonts/OpenSans-Regular.ttf");
+}
+
 li {
     float: left;
 }
