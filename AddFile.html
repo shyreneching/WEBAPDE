@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Add File</title>
+        <title>Big Nibble | Add File</title>
         <link rel="stylesheet" href= "addFile.css">
         <script src="jquery_3.3.1.js"></script>
         <script src="addFile.js"></script>
@@ -25,7 +25,7 @@
             the_return = document.querySelector(".file-return"), 
             confirm = document.getElementById("conf");
 
-            confirm.hidden = true;
+            // confirm.hidden = true;
 
             button.addEventListener( "keydown", function( event ) {
             if ( event.keyCode == 13 || event.keyCode == 32 ) {
@@ -38,7 +38,7 @@
             });
             fileInput.addEventListener( "change", function( event ) {
             the_return.innerHTML = this.value;
-            confirm.hidden = false;
+            // confirm.hidden = false;
             });
         </script>
     </body>
