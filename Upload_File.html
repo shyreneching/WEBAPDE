@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Add File</title>
+        <link rel="stylesheet" href= "addFile.css">
+    </head>
+
+    <body>
+        <div class="add_file_portion">
+            UPLOAD A FILE 
+            <br>
+            <input class="input-file" id="my-file" type="file" accept=".json" multiple>
+            <label tabindex="0" for="my-file" class="input-file-trigger">SELECT A FILE</label>
+             <p class="file-return"></p>
+             <div class="warn" style="padding-bottom: 0.5vw">There is already an existing file loaded. <br>
+                 <a href="Home.html" class="overwrite" id="ow">OVERWRITE?</a>
+                 <a href="Home.html" class="append" id="add">ADD TO EXISTING?</a>
+             </div>
+             <button class="cancel_btn" onclick="window.location.href = 'Home.html'">CANCEL</button>
+             <!-- <a href="Home.html" class="confirmation" id="conf">CONFIRM?</a> -->
+        </div>
+
+        <script>
+            document.querySelector("html").classList.add('js');
+
+            var fileInput = document.querySelector( ".input-file" ),
+            button = document.querySelector( ".input-file-trigger" ),
+            the_return = document.querySelector(".file-return"), 
+            overw = document.getElementById("ow");
+            addto = document.getElementById("add");
+
+            button.addEventListener( "keydown", function( event ) {
+            if ( event.keyCode == 13 || event.keyCode == 32 ) {
+            fileInput.focus();
+            }
+            });
+            button.addEventListener( "click", function( event ) {
+            fileInput.focus();
+            return false;
+            });
+            fileInput.addEventListener( "change", function( event ) {
+            the_return.innerHTML = this.value;
+            });
+            fileInput.addEventListener( "change", function( event ) {
+            the_return.innerHTML = this.value;
+            });
+        </script>
+    </body>
+</html>
