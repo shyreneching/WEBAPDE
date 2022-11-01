@@ -23,7 +23,7 @@
   "homepage": "https://github.com/chrisssycollins/vanilla-calendar#readme",
   "devDependencies": {
     "cssnano": "^3.10.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-postcss": "^7.0.1",
     "gulp-uglify": "^3.0.0",
     "postcss": "^6.0.16",
